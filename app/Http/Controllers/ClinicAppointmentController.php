@@ -24,7 +24,7 @@ class ClinicAppointmentController extends Controller
      */
     public function create()
     {
-        //
+       return view('admin.clinic.createAppointments');
     }
 
     /**

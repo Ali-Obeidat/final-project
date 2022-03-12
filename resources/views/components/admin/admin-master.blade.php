@@ -3,21 +3,26 @@
 
 
 <!-- Mirrored from demo.dashboardpack.com/architectui-html-pro/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Jan 2022 13:24:12 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Analytics Dashboard - This is an example dashboard created using build-in elements and components.</title>
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <title> Dashboard </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
-<link href="{{asset('css/main.d810cf0ae7f39f28f336.css')}}" rel="stylesheet"></head>
+    <link href="{{asset('css/main.d810cf0ae7f39f28f336.css')}}" rel="stylesheet">
+</head>
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
@@ -51,7 +56,8 @@
                         </span>
                     </button>
                 </span>
-            </div>    <div class="app-header__content">
+            </div>
+            <div class="app-header__content">
                 <div class="app-header-left">
                     <div class="search-wrapper">
                         <div class="input-holder">
@@ -218,7 +224,8 @@
                                 </button>
                             </div>
                         </li>
-                    </ul>        </div>
+                    </ul>
+                </div>
                 <div class="app-header-right">
                     <div class="header-dots">
                         <div class="dropdown">
@@ -281,16 +288,14 @@
                             </div>
                         </div>
                         <div class="dropdown">
-                            <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown"
-                                class="p-0 mr-2 btn btn-link">
+                            <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="p-0 mr-2 btn btn-link">
                                 <span class="icon-wrapper icon-wrapper-alt rounded-circle">
                                     <span class="icon-wrapper-bg bg-danger"></span>
                                     <i class="icon text-danger icon-anim-pulse ion-android-notifications"></i>
                                     <span class="badge badge-dot badge-dot-sm badge-danger">Notifications</span>
                                 </span>
                             </button>
-                            <div tabindex="-1" role="menu" aria-hidden="true"
-                                class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
+                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-menu-header mb-0">
                                     <div class="dropdown-menu-header-inner bg-deep-blue">
                                         <div class="menu-header-image opacity-1" style="background-image: url('assets/images/dropdown-header/city3.jpg');"></div>
@@ -470,7 +475,7 @@
                                                                 </span>
                                                                 <div class="vertical-timeline-element-content bounce-in">
                                                                     <h4 class="timeline-title">All Hands Meeting</h4>
-                                                                    <p>Lorem ipsum dolor sic amet, today at 
+                                                                    <p>Lorem ipsum dolor sic amet, today at
                                                                         <a href="javascript:void(0);">12:00 PM</a>
                                                                     </p>
                                                                     <span class="vertical-timeline-element-date"></span>
@@ -522,7 +527,7 @@
                                                                 </span>
                                                                 <div class="vertical-timeline-element-content bounce-in">
                                                                     <h4 class="timeline-title">All Hands Meeting</h4>
-                                                                    <p>Lorem ipsum dolor sic amet, today at 
+                                                                    <p>Lorem ipsum dolor sic amet, today at
                                                                         <a href="javascript:void(0);">12:00 PM</a>
                                                                     </p>
                                                                     <span class="vertical-timeline-element-date"></span>
@@ -687,7 +692,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
@@ -711,9 +716,18 @@
                                                                     <div class="widget-heading">Alina Mcloughlin</div>
                                                                     <div class="widget-subheading opacity-8">A short profile description</div>
                                                                 </div>
-                                                                <div class="widget-content-right mr-2">
-                                                                    <button class="btn-pill btn-shadow btn-shine btn btn-focus">Logout</button>
+                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                          
+
+                                                                    
                                                                 </div>
+                                                                <div class="widget-content-right mr-2">
+                                                                    <button href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="btn-pill btn-shadow btn-shine btn btn-focus">Logout</button>
+                                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                        @csrf
+                                                                    </form>
+                                                            </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -795,9 +809,11 @@
                                 <span class="hamburger-inner"></span>
                             </span>
                         </button>
-                    </div>        </div>
+                    </div>
+                </div>
             </div>
-        </div>        <div class="ui-theme-settings">
+        </div>
+        <div class="ui-theme-settings">
             <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
                 <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
             </button>
@@ -828,8 +844,7 @@
                                     <div class="widget-content p-0">
                                         <div class="widget-content-wrapper">
                                             <div class="widget-content-left mr-3">
-                                                <div class="switch has-switch switch-container-class"
-                                                    data-class="fixed-sidebar">
+                                                <div class="switch has-switch switch-container-class" data-class="fixed-sidebar">
                                                     <div class="switch-animate switch-on">
                                                         <input type="checkbox" checked data-toggle="toggle" data-onstyle="success">
                                                     </div>
@@ -1134,7 +1149,8 @@
                     </div>
                 </div>
             </div>
-        </div>        <div class="app-main">
+        </div>
+        <div class="app-main">
             <div class="app-sidebar sidebar-shadow">
                 <div class="app-header__logo">
                     <div class="logo-src"></div>
@@ -1165,87 +1181,32 @@
                             </span>
                         </button>
                     </span>
-                </div>    <div class="scrollbar-sidebar">
+                </div>
+                <div class="scrollbar-sidebar">
                     <div class="app-sidebar__inner">
                         <ul class="vertical-nav-menu">
                             <li class="app-sidebar__heading">Menu</li>
-                            <li  class="mm-active"      >
+                            <li class="mm-active">
                                 <a href="#">
                                     <i class="metismenu-icon pe-7s-rocket"></i>Dashboards
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
-                                <ul      >
-                                    <li>
-                                        <a href="index-2.html"  class="mm-active" >
-                                            <i class="metismenu-icon"></i>Analytics
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="dashboards-commerce.html" >
-                                            <i class="metismenu-icon"></i>Commerce
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="dashboards-sales.html" >
-                                            <i class="metismenu-icon">
-                                            </i>Sales
-                                        </a>
-                                    </li>
-                                    <li  >
-                                        <a href="#">
-                                            <i class="metismenu-icon"></i> Minimal
-                                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                        </a>
-                                        <ul  >
-                                            <li>
-                                                <a href="dashboards-minimal-1.html" >
-                                                    <i class="metismenu-icon"></i>Variation 1
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="dashboards-minimal-2.html" >
-                                                    <i class="metismenu-icon"></i>Variation 2
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="dashboards-crm.html" >
-                                            <i class="metismenu-icon"></i> CRM
-                                        </a>
-                                    </li>
-                                </ul>
+
                             </li>
                             <li>
                                 <a href="#">
                                     <i class="metismenu-icon pe-7s-browser"></i>Manege Categories
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
-                                <ul  
-                                      
-                                    >
+                                <ul>
                                     <li>
-                                        <a href="{{route('categories.create')}}" >
+                                        <a href="{{route('categories.create')}}">
                                             <i class="metismenu-icon"></i> Create Categories
                                         </a>
                                     </li>
-                                 
-                                  
-                                    <li>
-                                        <a href="pages-register-boxed.html" >
-                                            <i class="metismenu-icon"></i>Register Boxed
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-forgot-password.html" >
-                                            <i class="metismenu-icon"></i>Forgot Password
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-forgot-password-boxed.html" >
-                                            <i class="metismenu-icon"></i>Forgot Password Boxed
-                                        </a>
-                                    </li>
+
+
+
                                 </ul>
                             </li>
                             <li>
@@ -1253,425 +1214,54 @@
                                     <i class="metismenu-icon pe-7s-browser"></i>Manege Admins
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
-                                <ul  
-                                      
-                                    >
+                                <ul>
                                     <li>
-                                        <a href="{{route('admin.create')}}" >
+                                        <a href="{{route('admin.create')}}">
                                             <i class="metismenu-icon"></i> Create Clinic Admin
                                         </a>
                                     </li>
-                                 
-                                  
+
+
                                     <li>
-                                        <a href="{{route('admin.showAdmin')}}" >
+                                        <a href="{{route('admin.showAdmin')}}">
+                                            <i class="metismenu-icon"></i>View Clinics Admins
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-browser"></i>Manege Clinics
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="{{route('clinics.create')}}">
+                                            <i class="metismenu-icon"></i> Create Clinic
+                                        </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="{{route('clinics.index')}}">
                                             <i class="metismenu-icon"></i>View Clinics Admins
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="pages-forgot-password.html" >
-                                            <i class="metismenu-icon"></i>Forgot Password
+                                        <a href="{{route('clinicAppointments.create')}}">
+                                            <i class="metismenu-icon"></i>Create Clinics Appointments
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="pages-forgot-password-boxed.html" >
-                                            <i class="metismenu-icon"></i>Forgot Password Boxed
-                                        </a>
-                                    </li>
+
                                 </ul>
-                            </li>
-                            <li  
-                                   >
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-plugin"></i>Applications
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul  
-                                    >
-                                    <li>
-                                        <a href="apps-mailbox.html" >
-                                            <i class="metismenu-icon"></i>Mailbox
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-chat.html" >
-                                            <i class="metismenu-icon"></i>Chat
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-faq-section.html" >
-                                            <i class="metismenu-icon"></i>FAQ Section
-                                        </a>
-                                    </li>
-                                    <li   >
-                                        <a href="#">
-                                            <i class="metismenu-icon"></i>Forums
-                                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                        </a>
-                                        <ul   >
-                                            <li>
-                                                <a href="apps-forum-list.html" >
-                                                    <i class="metismenu-icon"></i>Forum Listing
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="apps-forum-threads.html" >
-                                                    <i class="metismenu-icon"></i>Forum Threads
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="apps-forum-discussion.html" >
-                                                    <i class="metismenu-icon"></i>Forum Discussion
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="app-sidebar__heading">UI Components</li>
-                            <li   
-                                  
-                                    
-                                   >
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-diamond"></i> Elements
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul   
-                                      
-                                        
-                                       >
-                                    <li   
-                                          >
-                                        <a href="#">
-                                            <i class="metismenu-icon"></i> Buttons
-                                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                        </a>
-                                        <ul   
-                                              >
-                                            <li>
-                                                <a href="elements-buttons-standard.html" >
-                                                    <i class="metismenu-icon"></i>Standard
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="elements-buttons-pills.html" >
-                                                    <i class="metismenu-icon"></i>Pills
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="elements-buttons-square.html" >
-                                                    <i class="metismenu-icon"></i>Square
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="elements-buttons-shadow.html" >
-                                                    <i class="metismenu-icon"></i>Shadow
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="elements-buttons-icons.html" >
-                                                    <i class="metismenu-icon"></i>With Icons
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="elements-dropdowns.html" >
-                                            <i class="metismenu-icon"></i>Dropdowns
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-icons.html" >
-                                            <i class="metismenu-icon"></i>Icons
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-badges-labels.html" >
-                                            <i class="metismenu-icon"></i>Badges
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-cards.html" >
-                                            <i class="metismenu-icon"></i>Cards
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-loaders.html" >
-                                            <i class="metismenu-icon"></i>Loading Indicators
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-list-group.html" >
-                                            <i class="metismenu-icon"></i>List Groups
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-navigation.html" >
-                                            <i class="metismenu-icon"></i>Navigation Menus
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-timelines.html" >
-                                            <i class="metismenu-icon"></i>Timeline
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-utilities.html" >
-                                            <i class="metismenu-icon"></i>Utilities
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li     
-                                  
-                                  
-                                  
-                                  >
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-car"></i> Components
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul     
-                                      
-                                      
-                                      
-                                      >
-                                    <li>
-                                        <a href="components-tabs.html" >
-                                            <i class="metismenu-icon"></i>Tabs
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-accordions.html" >
-                                            <i class="metismenu-icon"></i>Accordions
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-notifications.html" >
-                                            <i class="metismenu-icon"></i>Notifications
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-modals.html" >
-                                            <i class="metismenu-icon"></i>Modals
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-loading-blocks.html" >
-                                            <i class="metismenu-icon"></i>Loading Blockers
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-progress-bar.html" >
-                                            <i class="metismenu-icon"></i>Progress Bar
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-tooltips-popovers.html" >
-                                            <i class="metismenu-icon"> </i>Tooltips &amp; Popovers
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-carousel.html" >
-                                            <i class="metismenu-icon"></i>Carousel
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-calendar.html" >
-                                            <i class="metismenu-icon"></i>Calendar
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-pagination.html" >
-                                            <i class="metismenu-icon"></i>Pagination
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-count-up.html" >
-                                            <i class="metismenu-icon"></i>Count Up
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-scrollable-elements.html" >
-                                            <i class="metismenu-icon"></i>Scrollable
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-tree-view.html" >
-                                            <i class="metismenu-icon"></i>Tree View
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-maps.html" >
-                                            <i class="metismenu-icon"></i>Maps
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-ratings.html" >
-                                            <i class="metismenu-icon"></i>Ratings
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-image-crop.html" >
-                                            <i class="metismenu-icon"></i>Image Crop
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components-guided-tours.html" >
-                                            <i class="metismenu-icon"></i>Guided Tours
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li   >
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-display2"></i> Tables
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul   >
-                                    <li>
-                                        <a href="tables-data-tables.html" >
-                                            <i class="metismenu-icon"> </i>Data Tables
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-regular.html" >
-                                            <i class="metismenu-icon"></i>Regular Tables
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-grid.html" >
-                                            <i class="metismenu-icon"></i>Grid Tables
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="app-sidebar__heading">Dashboard Widgets</li>
-                            <li>
-                                <a href="widgets-chart-boxes.html" >
-                                    <i class="metismenu-icon pe-7s-graph"></i>Chart Boxes 1
-                                </a>
-                            </li>
-                            <li>
-                                <a href="widgets-chart-boxes-2.html" >
-                                    <i class="metismenu-icon pe-7s-way"></i>Chart Boxes 2
-                                </a>
-                            </li>
-                            <li>
-                                <a href="widgets-chart-boxes-3.html" >
-                                    <i class="metismenu-icon pe-7s-ball"></i>Chart Boxes 3
-                                </a>
-                            </li>
-                            <li>
-                                <a href="widgets-profile-boxes.html" >
-                                    <i class="metismenu-icon pe-7s-id"></i>Profile Boxes
-                                </a>
-                            </li>
-                            <li class="app-sidebar__heading">Forms</li>
-                            <li  
-                                 >
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-light"></i> Elements
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul  
-                                     >
-                                    <li>
-                                        <a href="forms-controls.html" >
-                                            <i class="metismenu-icon"></i>Controls
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-layouts.html" >
-                                            <i class="metismenu-icon"></i>Layouts
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-validation.html" >
-                                            <i class="metismenu-icon"></i>Validation
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-wizard.html" >
-                                            <i class="metismenu-icon"></i>Wizard
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li     
-                                 
-                                 >
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-joy"></i> Widgets
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul     
-                                     
-                                     >
-                                    <li>
-                                        <a href="forms-datepicker.html" >
-                                            <i class="metismenu-icon"></i>Datepicker
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-range-slider.html" >
-                                            <i class="metismenu-icon"></i>Range Slider
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-input-selects.html" >
-                                            <i class="metismenu-icon"></i>Input Selects
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-toggle-switch.html" >
-                                            <i class="metismenu-icon"></i>Toggle Switch
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-wysiwyg-editor.html" >
-                                            <i class="metismenu-icon"></i>WYSIWYG Editor
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-input-mask.html" >
-                                            <i class="metismenu-icon"></i>Input Mask
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-clipboard.html" >
-                                            <i class="metismenu-icon"></i>Clipboard
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-textarea-autosize.html" >
-                                            <i class="metismenu-icon"></i>Textarea Autosize
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="app-sidebar__heading">Charts</li>
-                            <li>
-                                <a href="charts-chartjs.html" >
-                                    <i class="metismenu-icon pe-7s-graph2"></i>ChartJS
-                                </a>
-                            </li>
-                            <li>
-                                <a href="charts-apexcharts.html" >
-                                    <i class="metismenu-icon pe-7s-graph"></i>Apex Charts
-                                </a>
-                            </li>
-                            <li>
-                                <a href="charts-sparklines.html" >
-                                    <i class="metismenu-icon pe-7s-graph1"></i>Chart Sparklines
-                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div><div class="app-main__outer">
-            @yield('content')
+            </div>
+            <div class="app-main__outer">
+                @yield('content')
                 <div class="app-wrapper-footer">
                     <div class="app-footer">
                         <div class="app-footer__inner">
@@ -1682,8 +1272,7 @@
                                             <i class="dot-btn-icon lnr-bullhorn icon-gradient bg-mean-fruit"></i>
                                             <div class="badge badge-dot badge-abs badge-dot-sm badge-danger">Notifications</div>
                                         </a>
-                                        <div tabindex="-1" role="menu" aria-hidden="true"
-                                            class="dropdown-menu-xl rm-pointers dropdown-menu">
+                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-xl rm-pointers dropdown-menu">
                                             <div class="dropdown-menu-header mb-0">
                                                 <div class="dropdown-menu-header-inner bg-deep-blue">
                                                     <div class="menu-header-image opacity-1" style="background-image: url('assets/images/dropdown-header/city3.jpg');"></div>
@@ -1730,7 +1319,7 @@
                                                                             <div>
                                                                                 <span class="vertical-timeline-element-icon bounce-in"></span>
                                                                                 <div class="vertical-timeline-element-content bounce-in">
-                                                                                    <p>Yet another one, at 
+                                                                                    <p>Yet another one, at
                                                                                         <span class="text-success">15:00 PM</span>
                                                                                     </p>
                                                                                     <span class="vertical-timeline-element-date"></span>
@@ -1759,20 +1348,17 @@
                                                                                                     <img src="assets/images/avatars/1.jpg" alt="">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div
-                                                                                                class="avatar-icon-wrapper avatar-icon-sm">
+                                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
                                                                                                 <div class="avatar-icon">
                                                                                                     <img src="assets/images/avatars/2.jpg" alt="">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div
-                                                                                                class="avatar-icon-wrapper avatar-icon-sm">
+                                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
                                                                                                 <div class="avatar-icon">
                                                                                                     <img src="assets/images/avatars/3.jpg" alt="">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div
-                                                                                                class="avatar-icon-wrapper avatar-icon-sm">
+                                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
                                                                                                 <div class="avatar-icon">
                                                                                                     <img src="assets/images/avatars/4.jpg" alt="">
                                                                                                 </div>
@@ -1787,14 +1373,12 @@
                                                                                                     <img src="assets/images/avatars/9.jpg" alt="">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div
-                                                                                                class="avatar-icon-wrapper avatar-icon-sm">
+                                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
                                                                                                 <div class="avatar-icon">
                                                                                                     <img src="assets/images/avatars/7.jpg" alt="">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div
-                                                                                                class="avatar-icon-wrapper avatar-icon-sm">
+                                                                                            <div class="avatar-icon-wrapper avatar-icon-sm">
                                                                                                 <div class="avatar-icon">
                                                                                                     <img src="assets/images/avatars/8.jpg" alt="">
                                                                                                 </div>
@@ -1830,7 +1414,7 @@
                                                                             <div>
                                                                                 <span class="vertical-timeline-element-icon bounce-in"></span>
                                                                                 <div class="vertical-timeline-element-content bounce-in">
-                                                                                    <p>Yet another one, at 
+                                                                                    <p>Yet another one, at
                                                                                         <span class="text-success">15:00 PM</span>
                                                                                     </p>
                                                                                     <span class="vertical-timeline-element-date"></span>
@@ -1875,7 +1459,7 @@
                                                                             </span>
                                                                             <div class="vertical-timeline-element-content bounce-in">
                                                                                 <h4 class="timeline-title">All Hands Meeting</h4>
-                                                                                <p>Lorem ipsum dolor sic amet, today at 
+                                                                                <p>Lorem ipsum dolor sic amet, today at
                                                                                     <a href="javascript:void(0);">12:00 PM</a>
                                                                                 </p>
                                                                                 <span class="vertical-timeline-element-date"></span>
@@ -1888,7 +1472,7 @@
                                                                                 <i class="badge badge-dot badge-dot-xl badge-warning"></i>
                                                                             </span>
                                                                             <div class="vertical-timeline-element-content bounce-in">
-                                                                                <p>Another meeting today, at 
+                                                                                <p>Another meeting today, at
                                                                                     <b class="text-danger">12:00 PM</b>
                                                                                 </p>
                                                                                 <p>Yet another one, at <span class="text-success">15:00 PM</span></p>
@@ -1931,7 +1515,7 @@
                                                                             </span>
                                                                             <div class="vertical-timeline-element-content bounce-in">
                                                                                 <h4 class="timeline-title">All Hands Meeting</h4>
-                                                                                <p>Lorem ipsum dolor sic amet, today at 
+                                                                                <p>Lorem ipsum dolor sic amet, today at
                                                                                     <a href="javascript:void(0);">12:00 PM</a>
                                                                                 </p>
                                                                                 <span class="vertical-timeline-element-date"></span>
@@ -1944,7 +1528,7 @@
                                                                                 <i class="badge badge-dot badge-dot-xl badge-warning"></i>
                                                                             </span>
                                                                             <div class="vertical-timeline-element-content bounce-in">
-                                                                                <p>Another meeting today, at 
+                                                                                <p>Another meeting today, at
                                                                                     <b class="text-danger">12:00 PM</b>
                                                                                 </p>
                                                                                 <p>Yet another one, at <span class="text-success">15:00 PM</span></p>
@@ -2219,7 +1803,8 @@
                             </div>
                         </div>
                     </div>
-                </div></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="app-drawer-wrapper">
@@ -2634,8 +2219,11 @@
             </div>
         </div>
     </div>
-    <div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="{{asset('assets/scripts/main.d810cf0ae7f39f28f336.js')}}"></script></body>
-
+    <div class="app-drawer-overlay d-none animated fadeIn"></div>
+    <script type="text/javascript" src="{{asset('main.d810cf0ae7f39f28f336.js')}}"></script>
+</body>
+@yield('script')
 
 <!-- Mirrored from demo.dashboardpack.com/architectui-html-pro/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Jan 2022 13:24:44 GMT -->
+
 </html>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Clinic;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class ClinicController extends Controller
 {
     /**
@@ -14,7 +16,9 @@ class ClinicController extends Controller
      */
     public function index()
     {
-        //
+        $clinics = Category::with('clinics')->get();
+        // return $clinics;
+        return view('admin.clinic.index', compact('clinics'));
     }
 
     /**
@@ -24,7 +28,10 @@ class ClinicController extends Controller
      */
     public function create()
     {
-        //
+        
+        $categories = Category::all();
+        $subs = SubCategory::all();
+        return view('admin.clinic.create' ,compact('categories','subs'));
     }
 
     /**
@@ -35,7 +42,46 @@ class ClinicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+      $input=   $request->validate([
+        'name'=>'required',
+        'doctor_name'=>'required',
+        'location'=>'required',
+        'insurance'=>'required',
+        'gender'=>'required',
+        'category_id'=>'required',
+        'img'=>'file',
+
+
+        ]);
+        // return $input;
+        // $sub = json_encode($request['sub']);
+        // return $request['sub'];
+        // return $input['img'];
+        if (request('img')) {
+            $input['img']= request('img')->store('images');
+        }
+        $clinic= Clinic::create([
+            'name'=>$input['name'],
+            'doctor_name'=>$input['doctor_name'],
+            'category_id'=>$input['category_id'],
+            'location'=>$input['location'],
+            'insurance'=>$input['insurance'],
+            'gender'=>$input['gender'],
+            'education'=>$request['education'],
+            'description'=>$request['description'],
+            'professional_background'=>$request['professional_background'],
+            'clinic_specialty'=>$request['clinic_specialty'],
+            'img'=>$input['img'],
+        ]);
+        
+        $sub = $request['sub'];
+        foreach ($sub as  $value) {
+            $clinic->SubCategories()->attach($value);
+        }
+        
+        // Alert::success('Success', 'Your post is saved');
+        return back()->with('success', 'Clinic created successfully');
     }
 
     /**
@@ -78,8 +124,12 @@ class ClinicController extends Controller
      * @param  \App\Models\Clinic  $clinic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Clinic $clinic)
+    public function destroy( $id)
     {
-        //
+        $clinic = Clinic::findOrFail($id);
+        $clinic-> delete();
+        Session()->flash('massage','clinic was deleted');
+
+        return back();
     }
 }

@@ -41,4 +41,10 @@ class Clinic extends Model
         return $this->belongsToMany(SubCategory::class);
         
     }
+    public function  getImgAttribute($value) {
+        if (strpos($value, 'https://') !== FALSE || strpos($value, 'http://') !== FALSE) {
+            return $value;
+        }
+        return asset('storage/' . $value);
+        }
 }

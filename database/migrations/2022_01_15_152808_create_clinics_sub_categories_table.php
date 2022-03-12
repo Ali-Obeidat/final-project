@@ -13,7 +13,7 @@ class CreateClinicsSubCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clinic_subCategory', function (Blueprint $table) {
+        Schema::create('clinic_sub_category', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sub_category_id')->references('id')->on('sub_categories')->onDelete('cascade');
             $table->foreignId('clinic_id')->references('id')->on('clinics')->onDelete('cascade');

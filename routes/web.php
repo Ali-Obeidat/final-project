@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ClinicAppointmentController;
+use App\Http\Controllers\ClinicController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,3 +36,6 @@ Route::put('/admin/update/{id}', [App\Http\Controllers\AdminController::class, '
 Route::get('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
 Route::resource('/categories', CategoryController::class,);
+Route::resource('/clinics', ClinicController::class,);
+Route::resource('/clinicAppointments', ClinicAppointmentController::class);
+Route::post('/clinics/store', [ClinicController::class,'store'])->name('store');
