@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClinicAppointmentController;
 use App\Http\Controllers\ClinicController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,12 +20,16 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $categories = Category::all();
+    // return $categories;
+    return view('userSide.Home',compact('categories'));
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/medenin/search', [App\Http\Controllers\ClinicController::class, 'search'])->name('search');
+Route::get('/medenin/search/{id}', [App\Http\Controllers\ClinicController::class, 'clinicDetail'])->name('clinicDetail');
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/admin/create', [App\Http\Controllers\AdminController::class, 'create'])->name('admin.create');
@@ -38,4 +44,5 @@ Route::post('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::cla
 Route::resource('/categories', CategoryController::class,);
 Route::resource('/clinics', ClinicController::class,);
 Route::resource('/clinicAppointments', ClinicAppointmentController::class);
+Route::get('/booking/{id}', [BookingController::class, 'show'])->name('booking.show');
 Route::post('/clinics/store', [ClinicController::class,'store'])->name('store');

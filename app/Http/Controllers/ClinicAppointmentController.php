@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Clinic;
 use App\Models\ClinicAppointment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ClinicAppointmentController extends Controller
@@ -24,7 +26,53 @@ class ClinicAppointmentController extends Controller
      */
     public function create()
     {
-       return view('admin.clinic.createAppointments');
+        $monday = Carbon::now()->startOfWeek()->addWeek();
+        $sunday = $monday->copy()->subDays();
+        $saturday = $sunday->copy()->subDays();
+        $tuesday = $monday->copy()->addDay();
+        $wednesday = $tuesday->copy()->addDay();
+        $thursday = $wednesday->copy()->addDay();
+        $friday = $thursday->copy()->addDay();
+        // if ($sunday === Carbon::SUNDAY) {
+        //     return 'ali';
+        // }
+        
+        $week = [
+            'Sunday' => $sunday->format('Y-m-d'),
+            'Saturday' => $saturday->format('Y-m-d'),
+            'Monday' => $monday->format('Y-m-d'),
+            'Tuesday' => $tuesday->format('Y-m-d'),
+            'Wednesday' => $wednesday->format('Y-m-d'),
+            'Thursday' => $thursday->format('Y-m-d'),
+            'Friday' => $friday->format('Y-m-d'),
+        ];
+        $times =[
+            '9:00 AM',
+            '9:30 AM',
+            '10:00 AM',
+            '10:30 AM',
+            '11:00 AM',
+            '11:30 AM',
+            '12:00 PM',
+            '12:30 PM', 
+            '1:00 PM',
+            '1:30 PM',
+            '2:00 PM',
+            '2:30 PM',
+            '3:00 PM',
+            '3:30 PM',
+            '4:00 PM',
+            '4:30 PM',
+            '5:00 PM',
+        ];
+        // $carbaoDay =  Carbon::createFromFormat('Y-m-d', '2022-03-12');
+        // $week = [];
+        // for ($i = 0; $i < 7; $i++) {
+        //     $week[] = $carbaoDay->startOfWeek()->addDay($i)->format('Y-m-d'); //push the current day and plus the mount of $i 
+        // }
+        // return  $week['Sunday'];
+            $clinics = Clinic::all();
+        return view('admin.clinic.createAppointments',compact('week','times','clinics'));
     }
 
     /**
@@ -35,7 +83,44 @@ class ClinicAppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $input['schedule_data']=  json_encode($request);
+        // return  $request['$request'];
+        $monday = Carbon::now()->startOfWeek()->addWeek();
+        $sunday = $monday->copy()->subDays();
+        $saturday = $sunday->copy()->subDays();
+        $tuesday = $monday->copy()->addDay();
+        $wednesday = $tuesday->copy()->addDay();
+        $thursday = $wednesday->copy()->addDay();
+        $friday = $thursday->copy()->addDay();
+        // if ($sunday === Carbon::SUNDAY) {
+        //     return 'ali';
+        // }
+        
+        $week = [
+            'Sunday' => $sunday->format('Y-m-d'),
+            'Saturday' => $saturday->format('Y-m-d'),
+            'Monday' => $monday->format('Y-m-d'),
+            'Tuesday' => $tuesday->format('Y-m-d'),
+            'Wednesday' => $wednesday->format('Y-m-d'),
+            'Thursday' => $thursday->format('Y-m-d'),
+            'Friday' => $friday->format('Y-m-d'),
+        ];
+      $clinic=  $request->validate([
+            'clinic_id'=> 'required',
+        ]);
+        $input['schedule_data']=[];
+        foreach ($week as $key =>  $value) {
+            $data[$value] =[];
+            array_push($data[$value],$request[$value]) ;
+            
+        }
+        array_push($input['schedule_data'],$data) ;
+
+        ClinicAppointment::create([
+            'clinic_id'=>$clinic['clinic_id'],
+            'schedule_data'=>$input['schedule_data'],
+        ]);
+        return   back();
     }
 
     /**
@@ -44,9 +129,37 @@ class ClinicAppointmentController extends Controller
      * @param  \App\Models\ClinicAppointment  $clinicAppointment
      * @return \Illuminate\Http\Response
      */
-    public function show(ClinicAppointment $clinicAppointment)
+    public function show($id)
     {
-        //
+
+        $times =[
+            '9:00 AM',
+            '9:30 AM',
+            '10:00 AM',
+            '10:30 AM',
+            '11:00 AM',
+            '11:30 AM',
+            '12:00 PM',
+            '12:30 PM', 
+            '1:00 PM',
+            '1:30 PM',
+            '2:00 PM',
+            '2:30 PM',
+            '3:00 PM',
+            '3:30 PM',
+            '4:00 PM',
+            '4:30 PM',
+            '5:00 PM',
+        ];
+        $clinicAppointment = ClinicAppointment::where('clinic_id' , $id)->get();
+        $clinicAppointmentID= $clinicAppointment[0]->id;
+        $clinic= Clinic::find($id);
+       $days= $clinicAppointment[0]->schedule_data[0];
+    //    foreach ($days as $key => $value) {
+    //        echo $key."<br>";
+    //    }
+    //    return $days;
+        return view('admin.clinic.showAppointment',compact('days','clinic','times','clinicAppointmentID'));
     }
 
     /**
@@ -67,9 +180,41 @@ class ClinicAppointmentController extends Controller
      * @param  \App\Models\ClinicAppointment  $clinicAppointment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ClinicAppointment $clinicAppointment)
+    public function update(Request $request,  $id)
     {
-        //
+        // return $request;
+        $monday = Carbon::now()->startOfWeek()->addWeek();
+        $sunday = $monday->copy()->subDays();
+        $saturday = $sunday->copy()->subDays();
+        $tuesday = $monday->copy()->addDay();
+        $wednesday = $tuesday->copy()->addDay();
+        $thursday = $wednesday->copy()->addDay();
+        $friday = $thursday->copy()->addDay();
+        // if ($sunday === Carbon::SUNDAY) {
+        //     return 'ali';
+        // }
+        
+        $week = [
+            'Sunday' => $sunday->format('Y-m-d'),
+            'Saturday' => $saturday->format('Y-m-d'),
+            'Monday' => $monday->format('Y-m-d'),
+            'Tuesday' => $tuesday->format('Y-m-d'),
+            'Wednesday' => $wednesday->format('Y-m-d'),
+            'Thursday' => $thursday->format('Y-m-d'),
+            'Friday' => $friday->format('Y-m-d'),
+        ];
+        $ClinicAppointment = ClinicAppointment::find($id);
+        $input['schedule_data']=[];
+        foreach ($week as $key =>  $value) {
+            $data[$value] =[];
+            array_push($data[$value],$request[$value]) ;
+            
+        }
+        array_push($input['schedule_data'],$data) ;
+        $ClinicAppointment->clinic_id = $request['clinic_id'];
+        $ClinicAppointment->schedule_data = $input['schedule_data'];
+        $ClinicAppointment->save();
+        return back();
     }
 
     /**

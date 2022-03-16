@@ -13,4 +13,14 @@ class ClinicAppointment extends Model
         return $this->belongsToMany(Clinic::class);
         
     }
+
+    public function setScheduleDataAttribute($value)
+    {
+        $this->attributes['schedule_data'] = json_encode($value);
+    }
+
+    public function getScheduleDataAttribute($value)
+    {
+        return $this->attributes[0]['schedule_data'] = json_decode($value);
+    }
 }

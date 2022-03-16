@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Clinic;
+use App\Models\ClinicAppointment;
 use App\Models\SubCategory;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 class ClinicController extends Controller
 {
@@ -132,4 +135,59 @@ class ClinicController extends Controller
 
         return back();
     }
+
+    public function search(Request $request)
+    {
+        $categories = Category::all();
+        // return $request->category_id;
+    //   return  $data = Clinic:: where('category_id', $request->category_id )->get();
+    $data = DB::table('clinics');
+        if( $request->category_id){
+            $data = $data->where('category_id', $request->category_id );
+        }
+        if( $request->location){
+            $data = $data->where('location', 'LIKE', "%" . $request->location . "%");
+        }
+        if( $request->INSURANCE ){
+            $data = $data->where('insurance', 'LIKE', "%" . $request->INSURANCE . "%");
+                         
+        }
+        if( $request->doctor_name ){
+            $data = $data->where('doctor_name', 'LIKE', "%" . $request->doctor_name . "%");
+                         
+        }
+        // return  $data->get();
+        $data = $data->paginate(10);
+        return view('userSide.clinics_grid', compact('data','categories'));
+    }
+public function clinicDetail($id)
+{
+    
+    $times =[
+        '9:00 AM',
+        '9:30 AM',
+        '10:00 AM',
+        '10:30 AM',
+        '11:00 AM',
+        '11:30 AM',
+        '12:00 PM',
+        '12:30 PM', 
+        '1:00 PM',
+        '1:30 PM',
+        '2:00 PM',
+        '2:30 PM',
+        '3:00 PM',
+        '3:30 PM',
+        '4:00 PM',
+        '4:30 PM',
+        '5:00 PM',
+    ];
+    
+    $clinicAppointment = ClinicAppointment::where('clinic_id' , $id)->get();
+    $clinicAppointmentID= $clinicAppointment[0]->id;
+    $clinic= Clinic::find($id);
+   $days= $clinicAppointment[0]->schedule_data[0];
+    // return $days;
+    return view('userSide.clinic_details',compact('clinic','days','times','clinicAppointmentID'));
+}
 }

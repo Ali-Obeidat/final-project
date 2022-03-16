@@ -1245,7 +1245,7 @@
 
                                     <li>
                                         <a href="{{route('clinics.index')}}">
-                                            <i class="metismenu-icon"></i>View Clinics Admins
+                                            <i class="metismenu-icon"></i>View Clinics 
                                         </a>
                                     </li>
                                     <li>

@@ -81,6 +81,7 @@
                                         <th>location</th>
                                         <th>Doctor Name</th>
                                         <th>Gender</th>
+                                        <th>Appointments</th>
                                         <th>Delete</th>
                                     </tr>
                                     </thead>
@@ -95,6 +96,7 @@
                                         <td>{{$data->location}}</td>
                                         <td>{{$data->doctor_name}}</td>
                                         <td>{{$data->gender}}</td>
+                                        <td><a href="{{route('clinicAppointments.show',$data->id)}}"><button type="submit" class="mb-2 mr-2 btn-pill btn-transition btn btn-outline-info">Show</button></a></td>
                                         <td><form method="post" action="{{route('clinics.destroy',$data->id)}}" enctype="multipart/form-data">
                                             @csrf
                                             @method('DELETE')
@@ -113,6 +115,7 @@
                                         <th>location</th>
                                         <th>Doctor Name</th>
                                         <th>Gender</th>
+                                        <th>Appointments</th>
                                         <th>Delete</th>
                                     </tr>
                                     </tfoot>

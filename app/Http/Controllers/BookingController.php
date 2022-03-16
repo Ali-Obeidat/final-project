@@ -24,7 +24,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -44,9 +44,9 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show(Request $request, $id)
     {
-        //
+        return $request;
     }
 
     /**
