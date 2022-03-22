@@ -161,8 +161,13 @@
                                     </div>
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
-                                    <div class="widget-heading"> {{Auth::user()->name}} </div>
-                                    <div class="widget-subheading">{{Auth::user()->clinics[0]->name}} </div>
+                                @if(Auth::user()->roles[0]->name == 'Super Admin')
+                                <div class="widget-heading"> {{Auth::user()->name}} </div>
+                        @else
+                        {{Auth::user()->clinics[0]->name}} Dashboard
+                        <div class="widget-heading"> {{Auth::user()->name}} </div>
+                                    <div class="widget-subheading">{{Auth::user()->clinics[0]->name}} </div>                        @endif
+                                    
                                 </div>
                                 <div class="widget-content-right ml-2 mr-2">
                                                                     <button href="{{ route('logout') }}" onclick="event.preventDefault();

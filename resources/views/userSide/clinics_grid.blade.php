@@ -18,17 +18,19 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <title>Doctors</title>
 </head>
-    <style>
-        @media screen and (max-width: 480px) {
- #search{
-     display: none;
- }
-}
-    </style>
+<style>
+    @media screen and (max-width: 480px) {
+        #search {
+            display: none;
+        }
+    }
+</style>
+
 <body>
 
 
-    <section>
+  
+<section>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -43,14 +45,14 @@
                                         <img src="{{asset('images/mail-icon.png')}}" alt="#">
                                         <div>
                                             <span>Mail us</span>
-                                            <h4><a href="https://demo.web3canvas.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="93fafdf5fcd3fef6f7f6fdfafd">[email&#160;protected]</a></h4>
+                                            <h4><a href="mailto: ali.hus.obeidat@gmail.com" class="__cf_email__" data-cfemail="c7aea9a1a887aaa2a3a2a9aea9">ali.hus.obeidat@gmail.com</a></h4>
                                         </div>
                                     </li>
                                     <li>
                                         <img src="{{asset('images/call-icon.png')}}" alt="#">
                                         <div>
                                             <span>Toll Free</span>
-                                            <h4>+123 456 7890</h4>
+                                            <h4>0799161600</h4>
                                         </div>
                                     </li>
                                     <li class="appointment-btn">
@@ -113,9 +115,9 @@
                                     </div>
                                 </li>
                                 @endguest
-                               
 
-                              
+
+
                             </ul>
                             <ul class="nav-icon-wrap">
                                 <li class="nav-item">
@@ -130,7 +132,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fab fa-google-plus-g"></i></a>
                                 </li>
-                                
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fas fa-bars"></i></a>
                                 </li>
@@ -155,50 +157,50 @@
                         <span><i>Home / Blog List</i></span>
                     </div>
                 </div>
-                <div class="row" id="search" >
-                <div class="col-md-12" >
-                    <form action="{{route('search')}}" method="get">
-                        <div class="booking-form row " style="background: none !important;">
+                <div class="row" id="search">
+                    <div class="col-md-12">
+                        <form action="{{route('search')}}" method="get">
+                            <div class="booking-form row " style="background: none !important;">
 
-                            <div class="col-md-3 col-sm-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Category</h5>
-                                    <select name="category_id" class="multiselect-dropdown form-control">
-                                        <option value="0">Select Category</option>
-                                        @foreach($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->name}}</option>
-                                        @endforeach
-                                    </select>
+                                <div class="col-md-3 col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Category</h5>
+                                        <select name="category_id" class="multiselect-dropdown form-control">
+                                            <option value="0">Select Category</option>
+                                            @foreach($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 col-sm-12" style="    display: flex;
+                                <div class="col-md-3 col-sm-12" style="    display: flex;
                             align-items: center;
                             margin-top: 30px;">
-                                <input style="" name="location" type="text" class="form-control" placeholder="Search by Location" />
-                            </div>
-                            <div class="col-md-3 col-sm-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Select insurance</h5>
-                                    <select name="INSURANCE" class="multiselect-dropdown form-control">
-                                        <option value="0">Select Category</option>
-                                        <option value="asda">asda</option>
-                                        <option value="">$category->name</option>
-                                    </select>
+                                    <input style="" name="location" type="text" class="form-control" placeholder="Search by Location" />
                                 </div>
-                               
-                            </div>
-                            <div class="col-md-3 col-sm-12" style="    display: flex;
+                                <div class="col-md-3 col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Select insurance</h5>
+                                        <select name="INSURANCE" class="multiselect-dropdown form-control">
+                                            <option value="0">Select Category</option>
+                                            <option value="asda">asda</option>
+                                            <option value="">$category->name</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-12" style="    display: flex;
                                 align-items: center;
                                 margin-top: 30px;">
-                                <input name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
-                                <button style="    margin-left: 5px;
+                                    <input name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
+                                    <button style="    margin-left: 5px;
     background-color: #5CC198;" type="submit" class="btn"><img src="{{asset('images/magnifier.png')}}" alt=""></button>
+                                </div>
+
                             </div>
-                         
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </section>
@@ -212,17 +214,17 @@
                 <div class="col-md-12">
                     <div class="sub-title_center">
                         <span><i>---- Clinics ----</i></span>
-                        <h2>Latest News & Events</h2>
+                        <h3>Book a visit with Best Doctors in Jordan in a click.</h3>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
                     <div class="blog-sidebar">
-                        <div class="blog-sidebar_heading">
+                        <!-- <div class="blog-sidebar_heading">
                             <h4>Search</h4>
-                        </div>
-                        <div class="blog-sidebar_wrap">
+                        </div> -->
+                        <!-- <div class="blog-sidebar_wrap">
                             <div class="blog-sidebar_content blog-sidebar_search">
                                 <form action="#">
                                     <div class="form-group">
@@ -231,10 +233,10 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="blog-sidebar">
-                        <div class="blog-sidebar_heading">
+                        <!-- <div class="blog-sidebar_heading">
                             <h4>Popular Posts</h4>
                         </div>
                         <div class="blog-sidebar_wrap">
@@ -277,10 +279,10 @@
                                     <span>June 25, 2019</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="blog-sidebar">
-                        <div class="blog-sidebar_heading">
+                        <!-- <div class="blog-sidebar_heading">
                             <h4>Categories</h4>
                         </div>
                         <div class="blog-sidebar_wrap">
@@ -292,10 +294,10 @@
                                 <li><a href="#">Neurology Sargery</a> <span>8</span></li>
                                 <li><a href="#">Allergic Issue</a> <span>1</span></li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="blog-sidebar">
-                        <div class="blog-sidebar_heading">
+                        <!-- <div class="blog-sidebar_heading">
                             <h4>Tags</h4>
                         </div>
                         <div class="blog-sidebar_wrap">
@@ -310,7 +312,7 @@
                                 <li><a href="#">Diagnosis</a></li>
                                 <li><a href="#">Rehabitation</a></li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="blog-sidebar">
                         <div class="blog-sidebar_heading">
@@ -349,7 +351,7 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="blog-img">
-                                        <img src="{{$value->img}}" class="img-fluid" alt="#" />
+                                        <img src="http://127.0.0.1:8000/storage/{{$value->img}}" class="img-fluid" alt="#" />
                                     </div>
                                 </div>
                                 <div class="col-md-6 d-flex align-items-center">

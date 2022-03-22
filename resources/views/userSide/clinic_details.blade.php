@@ -133,19 +133,60 @@
         </div>
     </div>
 
-    <section class="space sub-header">
+    <section class="space sub-header" style="height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;">
         <div class="container container-custom">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-2">
                     <div class="sub-header_content">
 
-
-                        <span><i> <a href="/" style="color: inherit;"> Home</a> / Clinic Detail</i></span>
+                        <span><i>Home /Clinic Detail</i></span>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="sub-header_main">
-                        <h2>Clinic Detail</h2>
+                <div class="row" id="search">
+                    <div class="col-md-12">
+                        <form action="{{route('search')}}" method="get">
+                            <div class="booking-form row " style="background: none !important;">
+
+                                <div class="col-md-3 col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Category</h5>
+                                        <select name="category_id" class="multiselect-dropdown form-control">
+                                            <option value="0">Select Category</option>
+                                            @foreach($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12" style="    display: flex;
+                            align-items: center;
+                            margin-top: 30px;">
+                                    <input style="" name="location" type="text" class="form-control" placeholder="Search by Location" />
+                                </div>
+                                <div class="col-md-3 col-sm-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Select insurance</h5>
+                                        <select name="INSURANCE" class="multiselect-dropdown form-control">
+                                            <option value="0">Select Category</option>
+                                            <option value="asda">asda</option>
+                                            <option value="">$category->name</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-12" style="    display: flex;
+                                align-items: center;
+                                margin-top: 30px;">
+                                    <input name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
+                                    <button style="    margin-left: 5px;
+    background-color: #5CC198;" type="submit" class="btn"><img src="{{asset('images/magnifier.png')}}" alt=""></button>
+                                </div>
+
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -153,13 +194,12 @@
     </section>
 
 
-
     <section class="" style="padding-top: 40px;">
         <div class="container container-custom">
             <div class="row">
                 <div class="col-md-8">
                     <div class="blog-pre-next col-md-12">
-                        <img class="col-sm-12" src="{{asset('images/doctors-img1.jpg')}}" class="img-fluid" alt="#">
+                        <img class="col-sm-12" src="{{$clinic->img}}" class="img-fluid" alt="#">
                         <div class="blog-pre-next_content col-md-12">
                             <h4>{{$clinic->name}}</h4>
                             <p style=""> {{$clinic->professional_background}} </p>

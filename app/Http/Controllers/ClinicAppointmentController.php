@@ -47,30 +47,30 @@ class ClinicAppointmentController extends Controller
             'Friday' => $friday->format('Y-m-d'),
         ];
         $times =[
-            '9:00 AM',
-            '9:30 AM',
-            '10:00 AM',
-            '10:30 AM',
-            '11:00 AM',
-            '11:30 AM',
-            '12:00 PM',
-            '12:30 PM', 
-            '1:00 PM',
-            '1:30 PM',
-            '2:00 PM',
-            '2:30 PM',
-            '3:00 PM',
-            '3:30 PM',
-            '4:00 PM',
-            '4:30 PM',
-            '5:00 PM',
+            '9:00',
+            '9:30',
+            '10:00',
+            '10:30',
+            '11:00',
+            '11:30',
+            '12:00',
+            '12:30', 
+            '13:00',
+            '13:30',
+            '14:00',
+            '14:30',
+            '15:00',
+            '15:30',
+            '16:00',
+            '16:30',
+            '17:00',
         ];
         // $carbaoDay =  Carbon::createFromFormat('Y-m-d', '2022-03-12');
         // $week = [];
         // for ($i = 0; $i < 7; $i++) {
         //     $week[] = $carbaoDay->startOfWeek()->addDay($i)->format('Y-m-d'); //push the current day and plus the mount of $i 
         // }
-        // return  $week['Sunday'];
+        // return  $week;
             $clinics = Clinic::all();
         return view('admin.clinic.createAppointments',compact('week','times','clinics'));
     }
@@ -85,7 +85,7 @@ class ClinicAppointmentController extends Controller
     {
         // $input['schedule_data']=  json_encode($request);
         // return  $request['$request'];
-        $monday = Carbon::now()->startOfWeek()->addWeek();
+        $monday = Carbon::now()->startOfWeek();
         $sunday = $monday->copy()->subDays();
         $saturday = $sunday->copy()->subDays();
         $tuesday = $monday->copy()->addDay();
@@ -133,23 +133,23 @@ class ClinicAppointmentController extends Controller
     {
 
         $times =[
-            '9:00 AM',
-            '9:30 AM',
-            '10:00 AM',
-            '10:30 AM',
-            '11:00 AM',
-            '11:30 AM',
-            '12:00 PM',
-            '12:30 PM', 
-            '1:00 PM',
-            '1:30 PM',
-            '2:00 PM',
-            '2:30 PM',
-            '3:00 PM',
-            '3:30 PM',
-            '4:00 PM',
-            '4:30 PM',
-            '5:00 PM',
+            '9:00',
+            '9:30',
+            '10:00',
+            '10:30',
+            '11:00',
+            '11:30',
+            '12:00',
+            '12:30', 
+            '13:00',
+            '13:30',
+            '14:00',
+            '14:30',
+            '15:00',
+            '15:30',
+            '16:00',
+            '16:30',
+            '17:00',
         ];
         $clinicAppointment = ClinicAppointment::where('clinic_id' , $id)->get();
         $clinicAppointmentID= $clinicAppointment[0]->id;

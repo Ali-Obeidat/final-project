@@ -13,8 +13,8 @@
                     Main Dashboard
                         @else
                         {{Auth::user()->clinics[0]->name}} Dashboard
-                        @endif
                         <div class="page-title-subheading">This is dashboard {{Auth::user()->clinics[0]->name}} Clinic</div>
+                        @endif
                     </div>
                 </div>
                 <!-- <div class="page-title-actions">

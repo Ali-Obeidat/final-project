@@ -218,25 +218,26 @@ public function clinicDetail($id)
 {
     
     $times =[
-        '9:00 AM',
-        '9:30 AM',
-        '10:00 AM',
-        '10:30 AM',
-        '11:00 AM',
-        '11:30 AM',
-        '12:00 PM',
-        '12:30 PM', 
-        '1:00 PM',
-        '1:30 PM',
-        '2:00 PM',
-        '2:30 PM',
-        '3:00 PM',
-        '3:30 PM',
-        '4:00 PM',
-        '4:30 PM',
-        '5:00 PM',
+        '9:00',
+        '9:30',
+        '10:00',
+        '10:30',
+        '11:00',
+        '11:30',
+        '12:00',
+        '12:30', 
+        '13:00',
+        '13:30',
+        '14:00',
+        '14:30',
+        '15:00',
+        '15:30',
+        '16:00',
+        '16:30',
+        '17:00',
     ];
-    
+    $categories = Category::all();
+
     $clinicAppointment = ClinicAppointment::where('clinic_id' , $id)->get();
     $clinicAppointmentID= $clinicAppointment[0]->id;
     $clinic= Clinic::find($id);
@@ -247,6 +248,6 @@ public function clinicDetail($id)
    $now = Carbon::now()->format('Y-m-d');
    $time= Carbon::now()->timezone('Asia/Riyadh')->format('H:i');
     // return $now;
-    return view('userSide.clinic_details',compact('clinic','days','times','clinicAppointmentID','booking','now','time'));
+    return view('userSide.clinic_details',compact('categories','clinic','days','times','clinicAppointmentID','booking','now','time'));
 }
 }
