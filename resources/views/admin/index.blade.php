@@ -8,11 +8,16 @@
                     <div class="page-title-icon">
                         <i class="pe-7s-car icon-gradient bg-mean-fruit"></i>
                     </div>
-                    <div>Analytics Dashboard
-                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.</div>
+                    <div>
+                    @if(Auth::user()->roles[0]->name == 'Super Admin')
+                    Main Dashboard
+                        @else
+                        {{Auth::user()->clinics[0]->name}} Dashboard
+                        @endif
+                        <div class="page-title-subheading">This is dashboard {{Auth::user()->clinics[0]->name}} Clinic</div>
                     </div>
                 </div>
-                <div class="page-title-actions">
+                <!-- <div class="page-title-actions">
                     <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
                         <i class="fa fa-star"></i>
                     </button>
@@ -54,10 +59,10 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-        <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+        <!-- <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
             <li class="nav-item">
                 <a role="tab" class="nav-link active" href="index-2.html">
                     <span>Variation 1</span>
@@ -68,8 +73,8 @@
                     <span>Variation 2</span>
                 </a>
             </li>
-        </ul>
-        <div class="tabs-animation">
+        </ul> -->
+        <!-- <div class="tabs-animation">
             <div class="mb-3 card">
                 <div class="card-header-tab card-header">
                     <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
@@ -1846,7 +1851,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     @endsection
 </x-admin.admin-master>

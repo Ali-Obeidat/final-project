@@ -72,53 +72,48 @@
                 </div>
                     
                 @endif
+                @include('sweetalert::alert')
+
                                 <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                                     <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th>clinic Name</th>
-                                        <th>Category</th>
-                                        <th>location</th>
-                                        <th>Doctor Name</th>
-                                        <th>Gender</th>
-                                        <th>Appointments</th>
-                                        <th>Booking</th>
+                                        <th>#Id</th>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Time</th>
+                                        <th>Day</th>
                                         <th>Delete</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($clinics as $clinic)
-                                        @foreach($clinic->clinics as $data)
+                                        @foreach($booking as $book)
+                                       
                                         
                                     <tr>
-                                        <td><img width="100" src="{{$data->img}}" alt=""> </td>
-                                        <td>{{$data->name}}</td>
-                                        <td>{{$clinic->name}}</td>
-                                        <td>{{$data->location}}</td>
-                                        <td>{{$data->doctor_name}}</td>
-                                        <td>{{$data->gender}}</td>
-                                        <td><a href="{{route('clinicAppointments.show',$data->id)}}"><button type="submit" class="mb-2 mr-2 btn-pill btn-transition btn btn-outline-info">Show</button></a></td>
-                                        <td><a href="{{route('clinics.show',$data->id)}}"><button type="submit" class="mb-2 mr-2 btn-pill btn-transition btn btn-outline-info">View</button></a></td>
-                                        <td><form method="post" action="{{route('clinics.destroy',$data->id)}}" enctype="multipart/form-data">
+                                        <td>{{$book->id}}</td>
+                                        <td>{{$book->user_name}}</td>
+                                        <td>{{$book->phone}}</td>
+                                        <td>{{$book->time}}</td>
+                                        <td>{{$book->day}}</td>
+                                         <td><form method="post" action="{{route('booking.destroy',$book->id)}}" enctype="multipart/form-data">
                                             @csrf
                                             @method('DELETE')
                                     <button type="submit" class="mb-2 mr-2 btn-pill btn-transition btn btn-outline-danger">Delete</button>
                                 </form></td>
+                                    
                                     </tr>
-                                    @endforeach
+                                    
                                     @endforeach
                                
                                     </tbody>
                                     <tfoot>
                                     <tr>
-                                    <th>Image</th>
-                                        <th>clinic Name</th>
-                                        <th>Category</th>
-                                        <th>location</th>
-                                        <th>Doctor Name</th>
-                                        <th>Gender</th>
-                                        <th>Appointments</th>
-                                        <th>Booking</th>
+                                    <th>#Id</th>
+                                    <th>Name</th>
+
+                                        <th>Phone</th>
+                                        <th>Time</th>
+                                        <th>Day</th>
                                         <th>Delete</th>
                                     </tr>
                                     </tfoot>

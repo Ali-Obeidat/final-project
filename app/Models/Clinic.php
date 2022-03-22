@@ -47,4 +47,8 @@ class Clinic extends Model
         }
         return asset('storage/' . $value);
         }
+    public function  getInsuranceAttribute($value) {
+        $data =  explode(",", $value);
+        return $data;
+        }
 }

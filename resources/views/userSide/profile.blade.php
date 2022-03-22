@@ -17,6 +17,8 @@
     <link href="{{asset('css/main.d810cf0ae7f39f28f336.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <title>Doctors</title>
 </head>
 
@@ -133,19 +135,21 @@
         </div>
     </div>
 
-    <section class="space sub-header">
+    <section class="space sub-header" style="height: 213px;
+    display: flex;
+    align-items: center;">
         <div class="container container-custom">
             <div class="row">
                 <div class="col-md-6">
                     <div class="sub-header_content">
 
 
-                        <span><i> <a href="/" style="color: inherit;"> Home</a> / Clinic Detail</i></span>
+                        <span><i> <a href="/" style="color: inherit;"> Home</a> / User profile</i></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="sub-header_main">
-                        <h2>Clinic Detail</h2>
+                        <h2>User profile</h2>
                     </div>
                 </div>
             </div>
@@ -159,11 +163,11 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="blog-pre-next col-md-12">
-                        <img class="col-sm-12" src="{{asset('images/doctors-img1.jpg')}}" class="img-fluid" alt="#">
+                        <img class="col-sm-12" src="{{asset('images/istockphoto-1223671392-612x612.jpg')}}" class="img-fluid" alt="#">
                         <div class="blog-pre-next_content col-md-12">
-                            <h4>{{$clinic->name}}</h4>
-                            <p style=""> {{$clinic->professional_background}} </p>
-                            <i class="fas fa-map-marker-alt"></i> {{$clinic->location}}
+                            <h4>Name: {{Auth::user()->name}}</h4>
+                            <p style="">Email {{Auth::user()->email}} </p>
+                            <i class="fas fa-map-phone-alt"></i> {{Auth::user()->phone}}
                             <br>
                             <span style="">Waiting time: 10 - 20</span>
                             <ul>
@@ -188,64 +192,93 @@
 
 
                 </div>
-                <div class="col-md-4">
-                    <div style="text-align: center;">
-                        <span>Choose Inclinic Appointment Time</span> <br>
-                        <span style="color: blue;">Book online using your mobile, without registering!</span>
-                    </div>
-                    <div style="height: 350px; overflow: overlay;">
-                        <div class="blog-sidebar">
-                            <table class="mb-0 table table-hover">
-                                <thead>
-                                    <tr>
-                                        @foreach($days as $day => $date)
-                                        <th>{{$day}}</th>
-                                        @endforeach
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    @foreach($days as $day => $date)
-                                    <td style="vertical-align: 0;">
-                                        @foreach( $date[0] as $hour)
-                                        <li style="list-style-type: none;    padding: 5px;">
-                                            <form action="{{route('booking.show',$clinic->id)}}" method="post">
-                                                @csrf
-                                                @method('GET')
-                                                <input hidden type="text" name="time" value="{{$hour}}">
-                                                <input hidden type="text" name="day" value="{{$day}}">
-                                                <button @foreach($booking as $book) @if($book->day == $day && $book->time ==$hour)
-                                                    disabled
-                                                    @endif
-                                                    @endforeach
-                                                    @if($day < $now) disabled @endif
-                                                    @if($day == $now && $time > explode(' ',$hour)[0] ) disabled @endif
-                                                    style=" width: 84px;" class="btn-pill btn-transition btn btn-outline-info" type="submit">{{$hour}}</button>
-
-                                            </form>
-                                        </li>
-                                        @endforeach
-
-                                    </td>
-                                    @endforeach
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
     <section class="">
         <div class="container container-custom">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div>
-                        <h3>Professional Background</h3>
-                        <p> Dr. Samar Hammoudah is a Consultant of Obstetric and Gynecology Laparoscopic Surgery. IVF .She got the Jordanian Board Certificate and Part(1) Arab Board .Certificate. She is a member of the Jordanian Society of Obstetricians and Gynecologist. She is specialized in treating different Obstetric and Gynecology cases. Dr. Samar is working currently in her private clinic.</p>
+                        <h3>Appointments</h3>
+                        <div class="main-card mb-3 card">
+                            <div class="card-body">
+                            @if(Session('massage'))
+                <div class="alert alert-danger"> 
+                    {{Session('massage')}}
+                </div>
+                    @elseif (Session('admin_create_massage'))
+                    <div class="alert alert-success"> 
+                    {{Session('admin_create_massage')}}
+                </div>
+                    @elseif (Session('admin_update_massage'))
+                    <div class="alert alert-success"> 
+                    {{Session('admin_update_massage')}}
+                </div>
+                    
+                @endif
+                                <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>#Id</th>
+                                        <th>Clinic Image</th>
+                                        <th>clinic Name</th>
+                                        <th>location</th>
+                                        <th>Doctor Name</th>
+                                        <th>Gender</th>
+                                        <th>The Patient</th>
+                                        <th>Date</th>
+                                        <th></th>
+                                       
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($Appointments as $Appointment)
+                                        
+                                    <tr>
+                                        <td>{{$Appointment->id}}</td>
+                                        <td><img width="100" src="{{$Appointment->clinic->img}}" alt=""> </td>
+                                        <td>{{$Appointment->clinic->name}}</td>
+                                        <td>{{$Appointment->clinic->location}}</td>
+                                        <td>{{$Appointment->clinic->doctor_name}}</td>
+                                        <td>{{$Appointment->clinic->gender}}</td>
+                                        <td>{{$Appointment->the_patient}}</td>
+                                        <td>{{$Appointment->day}}: {{$Appointment->time}} </td>
+                                        <td><form method="post" action="{{route('userBooking.destroy',$Appointment->id)}}" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('DELETE')
+                                            @if($day ==$Appointment->day && $hour < explode(' ',$Appointment->time)[0]  )
+                                    <button type="submit" class="mb-2 mr-2 btn-pill btn-transition btn btn-outline-danger">Cancel</button>
+                                   @else
+                                   <button type="submit" class="mb-2 mr-2 btn-pill btn-transition btn btn-outline-danger">Delete</button>
+
+                                    @endif
+                                </form> </td>
+                            
+                                    </tr>
+                                    @endforeach
+                               
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                    <th>#Id</th>
+                                    <th>Clinic Image</th>
+                                        <th>clinic Name</th>
+                                        <th>Category</th>
+                                        <th>location</th>
+                                        <th>Doctor Name</th>
+                                        <th>Gender</th>
+                                        <th>Date</th>
+                                        <th></th>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
                     </div>
+                    @include('sweetalert::alert')
 
 
                 </div>
@@ -253,44 +286,7 @@
             </div>
         </div>
     </section>
-    <section class="counter">
-        <div class="container container-custom">
-            <div class="row">
-                <div class="col-sm-4 col-md-3 col-lg-3">
-                    <div class="counter-block">
-                        <img src="images/counter1.png" alt="#">
-                        <div class="counter-text">
-                            <h2>60+</h2>
-                            <p>Expert Doctors</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-3 col-lg-3">
-                    <div class="counter-block">
-                        <img src="images/counter2.png" alt="#">
-                        <div class="counter-text">
-                            <h2>1000+</h2>
-                            <p>Happy Patients</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-3 col-lg-3">
-                    <div class="counter-block">
-                        <img src="images/counter3.png" alt="#">
-                        <div class="counter-text">
-                            <h2>150+</h2>
-                            <p>Award Winner</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3 col-lg-3 d-flex align-items-center justify-content-end">
-                    <div class="counter-btn_block">
-                        <a href="#" class="btn btn-success">BOOK NOW</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 
     <footer>
@@ -402,6 +398,8 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
     <script src="{{asset('js/script.js')}}"></script>
+    <script type="text/javascript" src="{{asset('main.d810cf0ae7f39f28f336.js')}}"></script>
+
 </body>
 
 <!-- Mirrored from demo.web3canvas.com/themeforest/medenin/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 12:34:25 GMT -->

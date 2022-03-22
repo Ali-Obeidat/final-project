@@ -20,7 +20,7 @@ class CreateBookingsTable extends Migration
             $table->foreignId('clinic_id')->references('id')->on('clinics')->onDelete('cascade');
             $table->string('insurance');
             $table->string('the_patient');
-            $table->time('time');
+            $table->string('time');
             $table->date('day');
             $table->timestamps();
         });

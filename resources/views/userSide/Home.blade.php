@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/slick-theme.css" />
     <link href="{{asset('css/main.d810cf0ae7f39f28f336.css')}}" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
@@ -64,7 +64,7 @@
 
                                         @else
                                         <li class="nav-item dropdown">
-                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('profile',Auth::user()->id) }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                 {{ Auth::user()->name }}
                                             </a>
 
@@ -80,66 +80,16 @@
                                             </div>
                                         </li>
                                         @endguest
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Patients <i class="fas fa-plus"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Services <i class="fas fa-plus"></i></a>
-                                                    <ul class="dropdown-menu dropdown-menu1">
-                                                        <li><a class="dropdown-item" href="services.html">Services
-                                                                One</a></li>
-                                                        <li><a class="dropdown-item" href="services-2.html">Services
-                                                                Two</a></li>
-                                                        <li><a class="dropdown-item" href="services-3.html">Services
-                                                                Three</a></li>
-                                                        <li><a class="dropdown-item" href="services-detail.html">Service
-                                                                Detail</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="dropdown-item" href="appointment.html">Appointment</a>
-                                                </li>
-                                                <li class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Our Doctors <i class="fas fa-plus"></i></a>
-                                                    <ul class="dropdown-menu dropdown-menu1">
-                                                        <li><a class="dropdown-item" href="doctors.html">Doctors One</a></li>
-                                                        <li><a class="dropdown-item" href="doctors-2.html">Doctors Two</a></li>
-                                                        <li><a class="dropdown-item" href="doctors-3.html">Doctors Three</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="dropdown-item" href="pricing.html">Pricing</a>
-                                                </li>
-                                            </ul>
-                                        </li>
 
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Blog <i class="fas fa-plus"></i> </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="blog-standard.html">Blog Stadared</a>
-                                                <a class="dropdown-item" href="blog-list.html">Blog List</a>
-                                                <a class="dropdown-item" href="blog-grid.html">Blog Grid</a>
-                                                <a class="dropdown-item" href="blog-grid-2.html">Blog Grid-2</a>
-                                                <a class="dropdown-item" href="blog-details.html">Blog Details</a>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> pages <i class="fas fa-plus"></i> </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="about.html">About</a>
-                                                <a class="dropdown-item" href="contact-us.html">Contact One</a>
-                                                <a class="dropdown-item" href="contact-us-2.html">Contact Two</a>
-                                                <a class="dropdown-item" href="error.html">Error 404</a>
-                                            </div>
-                                        </li>
+
+
+
                                         <li>
                                             <ul class="cart-seperate">
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="#"><i class="fas fa-search fa-top-search"></i></a>
                                                 </li>
-                                                
+
                                             </ul>
                                         </li>
                                         <li class="nav-item">
@@ -293,15 +243,16 @@
         </div>
 
     </header>
-
+    @include('sweetalert::alert')
 
     <section class="about-section">
-        <div class="container container-custom">
+        <div class="">
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{route('search')}}" method="get">
-                        <ul class="booking-form">
-                            <li>
+                        <div class="booking-form row ">
+
+                            <div class="col-md-3 col-sm-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Category</h5>
                                     <select name="category_id" class="multiselect-dropdown form-control">
@@ -311,29 +262,32 @@
                                         @endforeach
                                     </select>
                                 </div>
-                            </li>
-                            <li><input name="location" type="text" class="form-control" placeholder="Select Your Location" /><i class="fas fa-map-marker-alt"></i></li>
-                            <li>
+                            </div>
+                            <div class="col-md-3 col-sm-12" style="    display: flex;
+                            align-items: center;
+                            margin-top: 30px;">
+                                <input style="" name="location" type="text" class="form-control" placeholder="Search by Location" />
+                            </div>
+                            <div class="col-md-3 col-sm-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Select insurance</h5>
                                     <select name="INSURANCE" class="multiselect-dropdown form-control">
                                         <option value="0">Select Category</option>
-
                                         <option value="asda">asda</option>
                                         <option value="">$category->name</option>
-
-
                                     </select>
                                 </div>
-                            </li>
-                            <li>
+                               
+                            </div>
+                            <div class="col-md-3 col-sm-12" style="    display: flex;
+                                align-items: center;
+                                margin-top: 30px;">
                                 <input name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
-
-                            </li>
-                            <li class="form-btn">
-                                <button type="submit" class="btn btn-success">BOOK NOW</button>
-                            </li>
-                        </ul>
+                                <button style="    margin-left: 5px;
+    background-color: #5CC198;" type="submit" class="btn"><img src="{{asset('images/magnifier.png')}}" alt=""></button>
+                            </div>
+                         
+                        </div>
                     </form>
                 </div>
             </div>
@@ -911,7 +865,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="blog-row-block">
                             <div class="row">
                                 <div class="col-md-3">

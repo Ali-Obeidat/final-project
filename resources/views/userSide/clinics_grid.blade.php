@@ -18,7 +18,13 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <title>Doctors</title>
 </head>
-
+    <style>
+        @media screen and (max-width: 480px) {
+ #search{
+     display: none;
+ }
+}
+    </style>
 <body>
 
 
@@ -110,17 +116,6 @@
                                
 
                               
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        pages <i class="fas fa-plus"></i>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="about.html">About</a>
-                                        <a class="dropdown-item" href="contact-us.html">Contact One</a>
-                                        <a class="dropdown-item" href="contact-us-2.html">Contact Two</a>
-                                        <a class="dropdown-item" href="error.html">Error 404</a>
-                                    </div>
-                                </li>
                             </ul>
                             <ul class="nav-icon-wrap">
                                 <li class="nav-item">
@@ -148,7 +143,10 @@
         </div>
     </div>
 
-    <section class="space sub-header">
+    <section class="space sub-header" style="height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;">
         <div class="container container-custom">
             <div class="row">
                 <div class="col-md-2">
@@ -157,11 +155,12 @@
                         <span><i>Home / Blog List</i></span>
                     </div>
                 </div>
-                <div class="col-md-10">
-
+                <div class="row" id="search" >
+                <div class="col-md-12" >
                     <form action="{{route('search')}}" method="get">
-                        <ul class="booking-form">
-                            <li>
+                        <div class="booking-form row " style="background: none !important;">
+
+                            <div class="col-md-3 col-sm-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Category</h5>
                                     <select name="category_id" class="multiselect-dropdown form-control">
@@ -171,11 +170,13 @@
                                         @endforeach
                                     </select>
                                 </div>
-                            </li>
-                            <li>
-                                <input name="location" type="text" class="form-control" placeholder="Select Your Location" /><i class="fas fa-map-marker-alt"></i>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="col-md-3 col-sm-12" style="    display: flex;
+                            align-items: center;
+                            margin-top: 30px;">
+                                <input style="" name="location" type="text" class="form-control" placeholder="Search by Location" />
+                            </div>
+                            <div class="col-md-3 col-sm-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Select insurance</h5>
                                     <select name="INSURANCE" class="multiselect-dropdown form-control">
@@ -184,18 +185,20 @@
                                         <option value="">$category->name</option>
                                     </select>
                                 </div>
-                            </li>
-                            <li>
+                               
+                            </div>
+                            <div class="col-md-3 col-sm-12" style="    display: flex;
+                                align-items: center;
+                                margin-top: 30px;">
                                 <input name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
-
-                            </li>
-                            <li class="form-btn">
-                                <button type="submit" class="btn btn-success">BOOK NOW</button>
-                            </li>
-                        </ul>
+                                <button style="    margin-left: 5px;
+    background-color: #5CC198;" type="submit" class="btn"><img src="{{asset('images/magnifier.png')}}" alt=""></button>
+                            </div>
+                         
+                        </div>
                     </form>
-
                 </div>
+            </div>
             </div>
         </div>
     </section>

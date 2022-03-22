@@ -26,7 +26,7 @@ class ClinicAppointmentController extends Controller
      */
     public function create()
     {
-        $monday = Carbon::now()->startOfWeek()->addWeek();
+        $monday = Carbon::now()->startOfWeek();
         $sunday = $monday->copy()->subDays();
         $saturday = $sunday->copy()->subDays();
         $tuesday = $monday->copy()->addDay();
@@ -38,8 +38,8 @@ class ClinicAppointmentController extends Controller
         // }
         
         $week = [
-            'Sunday' => $sunday->format('Y-m-d'),
             'Saturday' => $saturday->format('Y-m-d'),
+            'Sunday' => $sunday->format('Y-m-d'),
             'Monday' => $monday->format('Y-m-d'),
             'Tuesday' => $tuesday->format('Y-m-d'),
             'Wednesday' => $wednesday->format('Y-m-d'),
@@ -97,8 +97,8 @@ class ClinicAppointmentController extends Controller
         // }
         
         $week = [
-            'Sunday' => $sunday->format('Y-m-d'),
             'Saturday' => $saturday->format('Y-m-d'),
+            'Sunday' => $sunday->format('Y-m-d'),
             'Monday' => $monday->format('Y-m-d'),
             'Tuesday' => $tuesday->format('Y-m-d'),
             'Wednesday' => $wednesday->format('Y-m-d'),

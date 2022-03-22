@@ -4,7 +4,9 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClinicAppointmentController;
 use App\Http\Controllers\ClinicController;
+use App\Http\Controllers\UserBookingController;
 use App\Models\Category;
+use App\Models\userBooking;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,6 +30,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/UserProfile/{id}', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 Route::get('/medenin/search', [App\Http\Controllers\ClinicController::class, 'search'])->name('search');
 Route::get('/medenin/search/{id}', [App\Http\Controllers\ClinicController::class, 'clinicDetail'])->name('clinicDetail');
 
@@ -41,8 +44,11 @@ Route::put('/admin/update/{id}', [App\Http\Controllers\AdminController::class, '
 
 Route::get('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
-Route::resource('/categories', CategoryController::class,);
-Route::resource('/clinics', ClinicController::class,);
-Route::resource('/clinicAppointments', ClinicAppointmentController::class);
+Route::resource('/categories', CategoryController::class,)->middleware('auth:admin');
+Route::resource('/clinics', ClinicController::class,)->middleware('auth:admin');
+Route::resource('/clinicAppointments', ClinicAppointmentController::class)->middleware('auth:admin');
+Route::resource('/userBooking', UserBookingController::class);
 Route::get('/booking/{id}', [BookingController::class, 'show'])->name('booking.show');
+Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
+Route::DELETE('/booking/delete/{id}', [BookingController::class, 'destroy'])->name('booking.destroy');
 Route::post('/clinics/store', [ClinicController::class,'store'])->name('store');

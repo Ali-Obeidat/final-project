@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
+use App\Models\Booking;
 use App\Models\Category;
 use App\Models\Clinic;
 use App\Models\ClinicAppointment;
 use App\Models\SubCategory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 class ClinicController extends Controller
@@ -20,7 +23,7 @@ class ClinicController extends Controller
     public function index()
     {
         $clinics = Category::with('clinics')->get();
-        // return $clinics;
+        // return  Auth::user()->clinics[0]->id;
         return view('admin.clinic.index', compact('clinics'));
     }
 
@@ -93,9 +96,12 @@ class ClinicController extends Controller
      * @param  \App\Models\Clinic  $clinic
      * @return \Illuminate\Http\Response
      */
-    public function show(Clinic $clinic)
+    public function show($id)
     {
-        //
+        $clinic =  Clinic::find($id);
+        $booking = Booking::where('clinic_id', $id)->get();
+        // return $booking;
+        return view('admin.clinic.showBooking',compact('booking','clinic'));
     }
 
     /**
@@ -104,9 +110,18 @@ class ClinicController extends Controller
      * @param  \App\Models\Clinic  $clinic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Clinic $clinic)
+    public function edit($id)
     {
-        //
+
+        $ClinicAdmin = Admin::with('clinics')->where('id' , $id)->get();
+        $clinic=  $ClinicAdmin[0]->clinics[0];
+
+        $ClinicCategory =Category::find($ClinicAdmin[0]->clinics[0]->category_id) ;
+        $ClinicSubCat =$clinic->SubCategories ;
+        // return $clinic->SubCategories;
+        $categories = Category::all();
+        $subs = SubCategory::all();
+        return view('admin.clinic.editClinic' ,compact('categories','clinic','subs','ClinicCategory','ClinicSubCat'));
     }
 
     /**
@@ -116,9 +131,48 @@ class ClinicController extends Controller
      * @param  \App\Models\Clinic  $clinic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Clinic $clinic)
+    public function update(Request $request,  $id)
     {
-        //
+        // return $request;
+        $input=   $request->validate([
+            'name'=>'required',
+            'doctor_name'=>'required',
+            'location'=>'required',
+            'insurance'=>'required',
+            'gender'=>'required',
+            'category_id'=>'required',
+            'img'=>'file',
+    
+    
+            ]);
+            if (request('img')) {
+                $input['img']= request('img')->store('images');
+            }
+           
+            
+            
+            // Alert::success('Success', 'Your post is saved');
+            $clinic= Clinic::find($id);
+            $clinic->name= $input['name'];
+            $clinic->doctor_name= $input['doctor_name'];
+            $clinic->category_id= $input['category_id'];
+            $clinic->location= $input['location'];
+            $clinic->insurance= $input['insurance'];
+            $clinic->gender= $input['gender'];
+            $clinic->education= $request['education'];
+            $clinic->description= $request['description'];
+            $clinic->professional_background= $request['professional_background'];
+            $clinic->clinic_specialty= $request['clinic_specialty'];
+            if (request('img')) {
+                $clinic->img = $input['img'];
+            }
+            $clinic->save();
+            $sub = $request['sub'];
+            foreach ($sub as  $value) {
+                $clinic->SubCategories()->attach($value);
+            }
+            
+            return back()->with('success', 'Clinic Was Updated');
     }
 
     /**
@@ -186,8 +240,13 @@ public function clinicDetail($id)
     $clinicAppointment = ClinicAppointment::where('clinic_id' , $id)->get();
     $clinicAppointmentID= $clinicAppointment[0]->id;
     $clinic= Clinic::find($id);
+    $booking = Booking::where('clinic_id',$clinic->id )->get();
+    // return $booking;
+
    $days= $clinicAppointment[0]->schedule_data[0];
-    // return $days;
-    return view('userSide.clinic_details',compact('clinic','days','times','clinicAppointmentID'));
+   $now = Carbon::now()->format('Y-m-d');
+   $time= Carbon::now()->timezone('Asia/Riyadh')->format('H:i');
+    // return $now;
+    return view('userSide.clinic_details',compact('clinic','days','times','clinicAppointmentID','booking','now','time'));
 }
 }

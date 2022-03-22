@@ -34,7 +34,7 @@
                                 
                                 <div class="main-card mb-3 card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Select2 Bootstrap 4 Single</h5>
+                                    <h5 class="card-title">Select Clinic</h5>
                                     <select name="clinic" class="multiselect-dropdown form-control">
                                     @if(!empty($clinics))
                                         @foreach($clinics as $clinic)
@@ -48,7 +48,7 @@
                             </div>
                               
                              
-                                <button class="mt-2 btn btn-primary">Sign in</button>
+                                <button class="mt-2 btn btn-primary">Create</button>
                             </form>
                         </div>
                     </div>

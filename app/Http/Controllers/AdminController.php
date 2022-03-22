@@ -52,6 +52,7 @@ class AdminController extends Controller
             'password'=>Hash::make( $input['password']),
         ]);
         $admin->clinics()->attach($input['clinic']);
+        $admin->roles()->attach(2);
 
         session()->flash('admin_create_massage','Admin was created');
         return redirect(route('admin.showAdmin'));
