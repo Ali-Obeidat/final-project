@@ -358,8 +358,8 @@
                                     <div class="blog-content">
                                         <span style="font-size: x-large;">{{$value->name}}</span>
                                         <p>
-                                            <i class="fas fa-map-marker-alt"></i> {{$value->location}} <br />
-                                            {{$value->professional_background}}
+                                            <i class="fas fa-map-marker-alt"></i> {{$value->location}}. <br />
+                                           <img src="{{asset('images/doctor.png')}}" alt=""> {{$value->description}}
                                         </p>
                                         <span>Waiting time: 10 - 20</span>
                                     </div>

@@ -23,8 +23,20 @@
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Medenin HTML Template</title>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
+    <title>Medenin</title>
+    <style>
+       @media (max-width: 450px) { 
+            #location{
+                width: 234px;
+            }
+            #doctor_name{
+                width: 180px;
+            }
+
+        }
+
+    </style>
 </head>
 
 <body>
@@ -252,7 +264,7 @@
                     <form action="{{route('search')}}" method="get">
                         <div class="booking-form row ">
 
-                            <div class="col-md-3 col-sm-8">
+                            <div class="col-md-6 col-lg-3 col-sm-12">
                                 <div class="card-body">
                                     <h5 class="card-title">Category</h5>
                                     <select name="category_id" class="multiselect-dropdown form-control">
@@ -263,12 +275,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-12" style="    display: flex;
+                            <div class="col-md-6 col-lg-3 col-sm-12" style="    display: flex;
                             align-items: center;
-                            margin-top: 30px;">
-                                <input style="" name="location" type="text" class="form-control" placeholder="Search by Location" />
+                            margin-top: 30px;
+                            justify-content: center;">
+                                <input  id="location" name="location" type="text" class="form-control" placeholder="Search by Location" />
                             </div>
-                            <div class="col-md-3 col-sm-8">
+                            <div class="col-md-6 col-lg-3 col-sm-12">
                                 <div class="card-body">
                                     <h5 class="card-title">Select insurance</h5>
                                     <select name="INSURANCE" class="multiselect-dropdown form-control">
@@ -277,16 +290,17 @@
                                         <option value="">$category->name</option>
                                     </select>
                                 </div>
-                               
+
                             </div>
-                            <div class="col-md-3 col-sm-12" style="    display: flex;
+                            <div class="col-md-6 col-lg-3 col-sm-12" style="    display: flex;
                                 align-items: center;
-                                margin-top: 30px;">
-                                <input name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
-                                <button style="    margin-left: 5px;
+                                margin-top: 30px;
+                                justify-content: center;">
+                                <input  id="doctor_name" name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
+                                <button style="  margin-left: 5px;
     background-color: #5CC198;" type="submit" class="btn"><img src="{{asset('images/magnifier.png')}}" alt=""></button>
                             </div>
-                         
+
                         </div>
                     </form>
                 </div>
