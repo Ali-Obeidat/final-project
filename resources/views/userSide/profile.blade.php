@@ -166,24 +166,10 @@
                         <img class="col-sm-12" src="{{asset('images/istockphoto-1223671392-612x612.jpg')}}" class="img-fluid" alt="#">
                         <div class="blog-pre-next_content col-md-12">
                             <h4>Name: {{Auth::user()->name}}</h4>
-                            <p style="">Email {{Auth::user()->email}} </p>
+                            <p style="">Email: {{Auth::user()->email}} </p>
                             <i class="fas fa-map-phone-alt"></i> {{Auth::user()->phone}}
                             <br>
-                            <span style="">Waiting time: 10 - 20</span>
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                            </ul>
+                            
                         </div>
                     </div>
 
@@ -248,7 +234,7 @@
                                         <td><form method="post" action="{{route('userBooking.destroy',$Appointment->id)}}" enctype="multipart/form-data">
                                             @csrf
                                             @method('DELETE')
-                                            @if($day ==$Appointment->day && $hour < explode(' ',$Appointment->time)[0]  )
+                                            @if($day ==$Appointment->day && $hour < explode(' ',$Appointment->time)[0] || $day < $Appointment->day  )
                                     <button type="submit" class="mb-2 mr-2 btn-pill btn-transition btn btn-outline-danger">Cancel</button>
                                    @else
                                    <button type="submit" class="mb-2 mr-2 btn-pill btn-transition btn btn-outline-danger">Delete</button>

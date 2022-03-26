@@ -186,7 +186,7 @@
                                         <path class="big-circle" opacity="0.071" fill-rule="evenodd" clip-rule="evenodd" d="M377 29C563.12 29 714 179.879 714 366C714 552.119 563.12 702.999 377 702.999C190.88 702.999 40 552.119 40 366C40 179.879 190.88 29 377 29Z" fill="#4D72D0" />
                                         <path class="small-circle" opacity="0.051" fill-rule="evenodd" clip-rule="evenodd" d="M376.471 120.995C512.043 120.995 621.947 230.898 621.947 366.471C621.947 502.043 512.043 611.946 376.471 611.946C240.898 611.946 130.995 502.043 130.995 366.471C130.995 230.898 240.898 120.995 376.471 120.995Z" fill="#4D72D0" />
                                     </svg>
-                                    <img src="images/hero-doctor-1.png" class="img-fluid animated-hero" alt="hero" />
+                                    <img src="images/pricing-img-removebg-preview.png" class="img-fluid animated-hero" alt="hero" />
                                     <ul class="main-slider-social">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -230,7 +230,7 @@
                                         <path class="big-circle" opacity="0.071" fill-rule="evenodd" clip-rule="evenodd" d="M377 29C563.12 29 714 179.879 714 366C714 552.119 563.12 702.999 377 702.999C190.88 702.999 40 552.119 40 366C40 179.879 190.88 29 377 29Z" fill="#4D72D0" />
                                         <path class="small-circle" opacity="0.051" fill-rule="evenodd" clip-rule="evenodd" d="M376.471 120.995C512.043 120.995 621.947 230.898 621.947 366.471C621.947 502.043 512.043 611.946 376.471 611.946C240.898 611.946 130.995 502.043 130.995 366.471C130.995 230.898 240.898 120.995 376.471 120.995Z" fill="#4D72D0" />
                                     </svg>
-                                    <img src="images/hero-doctor-1.png" class="img-fluid animated-hero" alt="hero" />
+                                    <img src="images/play-img.png" class="img-fluid animated-hero" alt="hero" />
                                     <ul class="main-slider-social">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -257,18 +257,20 @@
     </header>
     @include('sweetalert::alert')
 
-    <section class="about-section">
+    <section class="about-section" style="margin-top: 25px;">
         <div class="">
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{route('search')}}" method="get">
+                    <h3 style="text-align: center; padding: 10px;">Find your clinic</h3>
+
                         <div class="booking-form row ">
 
                             <div class="col-md-6 col-lg-3 col-sm-12">
                                 <div class="card-body">
-                                    <h5 class="card-title">Category</h5>
+                                    <h5 class="card-title">specialty</h5>
                                     <select name="category_id" class="multiselect-dropdown form-control">
-                                        <option value="0">Select Category</option>
+                                        <option value="0">Search by specialty</option>
                                         @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
@@ -285,9 +287,54 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Select insurance</h5>
                                     <select name="INSURANCE" class="multiselect-dropdown form-control">
-                                        <option value="0">Select Category</option>
-                                        <option value="asda">asda</option>
-                                        <option value="">$category->name</option>
+                                        <option value="0">Select Insurance</option>
+                                        <option value="ACI - Nat Health">ACI - Nat Health</option>
+                                        <option value="ACT - Nat Health">ACT - Nat Health</option>
+                                        <option value="AJIG - Nat Health">AJIG - Nat Health</option>
+                                        <option value="Al Aqsa Insurance Services Est">Al Aqsa Insurance Services Est</option>
+                                        <option value="Al Fakher Tobacco - Nat Health">Al Fakher Tobacco - Nat Health</option>
+                                        <option value="Al Hussein bin Tala University - Nat Health">Al Hussein bin Tala University - Nat Health</option>
+                                        <option value="Al Ittihad Schools insurance">Al Ittihad Schools insurance</option>
+                                        <option value="Al Khalidi Hospital Insurance">Al Khalidi Hospital Insurance</option>
+                                        <option value="Al Manara Insurance Co">Al Manara Insurance Co</option>
+                                        <option value="Al Nisr Al Arabi Insurance">Al Nisr Al Arabi Insurance</option>
+                                        <option value="Al Yaqeen Association - Nat Health">Al Yaqeen Association - Nat Health</option>
+                                        <option value="Al-Israa University">Al-Israa University</option>
+                                        <option value="Allianz - Nat Health">Allianz - Nat Health</option>
+                                        <option value="AlRai News - Nat Health">AlRai News - Nat Health</option>
+                                        <option value="Applied Sciences University">Applied Sciences University</option>
+                                        <option value="Aqaba Logistics Village - Nat Health">Aqaba Logistics Village - Nat Health</option>
+                                        <option value="Aqaba Water - Nat Health">Aqaba Water - Nat Health</option>
+                                        <option value="Arab Bank">Arab Bank</option>
+                                        <option value="Arab Company for White Cement">Arab Company for White Cement</option>
+                                        <option value="Arab Insurance Company">Arab Insurance Company</option>
+                                        <option value="Arab Insurance Group">Arab Insurance Group</option>
+                                        <option value="Arab Jordan Investment Bank">Arab Jordan Investment Bank</option>
+                                        <option value="Arab Orient Insurance">Arab Orient Insurance</option>
+                                        <option value="Axa - Nat Health">Axa - Nat Health</option>
+                                        <option value="Balqa Applied University">Balqa Applied University</option>
+                                        <option value="Bupa international">Bupa international</option>
+                                        <option value="Central Bank of Jordan">Central Bank of Jordan</option>
+                                        <option value="Delta Insurance Co">Delta Insurance Co</option>
+                                        <option value="Eico - Nat Health">Eico - Nat Health</option>
+                                        <option value="Emirates Jordan Insurance Scoop">Emirates Jordan Insurance Scoop</option>
+                                        <option value="Euro Arab Insurance Group">Euro Arab Insurance Group</option>
+                                        <option value="First Finance Co">First Finance Co</option>
+                                        <option value="First Finance Co">First Insurance co</option>
+                                        <option value="General Electricity Generation">General Electricity Generation</option>
+                                        <option value="Geo Blue Health Insurance">Geo Blue Health Insurance</option>
+                                        <option value="Geo Blue Health Insurance">Globe Med</option>
+                                        <option value="Housing Ban">Housing Bank</option>
+                                        <option value="Ibn Al Haytham Hospital Insurance">Ibn Al Haytham Hospital Insurance</option>
+                                        <option value="International Consultancy For Health Insurance">International Consultancy For Health Insurance</option>
+                                        <option value="Irbid Electricity">Irbid Electricity</option>
+                                        <option value="Iris Guard - Nat Health">Iris Guard - Nat Health</option>
+                                        <option value="Islamic Center Association - Nat Health">Islamic Center Association - Nat Health</option>
+                                        <option value="JERCO - Nat Health">JERCO - Nat Health</option>
+                                        <option value="JMRC - Nat Health">JMRC - Nat Health</option>
+                                        <option value="JERCO - Nat Health">JERCO - Nat Health</option>
+                                        <option value="NTD - Nat Health">NTD - Nat Health</option>
+                                        <option value="Yarmouk Insurance Co">Yarmouk Insurance Co</option>
                                     </select>
                                 </div>
 
@@ -305,6 +352,7 @@
                     </form>
                 </div>
             </div>
+            <div class="container ">
             <div class="row space">
 
                 <div class="col-md-4">
@@ -338,70 +386,8 @@
                 </div>
 
             </div>
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="about-video_block">
-                        <div class="row">
-                            <div class="col-md-12 col-lg-6">
-                                <a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="video-play-img popup-youtube">
-                                    <img src="images/about-img.jpg" class="img-fluid w-100" alt="#" />
-                                    <div class="video-play-btn">
-                                        <div class="video-play-icon">
-                                            <i class="fas fa-play"></i>
-                                        </div>
-                                        <span>PLAY VIDEO</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-12 col-lg-6">
-                                <div class="video-play-text">
-                                    <h2>Short Story About Mededin Clinic.</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation.
-                                    </p>
-                                    <p>
-                                        Sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                        minim veniam, quis nostru
-                                        <a href="#">Readmore</a>
-                                    </p>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="facilities blue">
-                                                <h3>1000+</h3>
-                                                <span>Happy Patients</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="facilities green">
-                                                <h3>215+</h3>
-                                                <span>Expert Doctors</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="facilities yellow">
-                                                <h3>315+</h3>
-                                                <span>Hospital Rooms</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="facilities gray">
-                                                <h3>106+</h3>
-                                                <span>Award Winner</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
+            
         </div>
     </section>
 
@@ -548,7 +534,7 @@
                             </div>
                             <div class="why-choose_list-content">
                                 <span>Call us now</span>
-                                <h3>+123 456 7890</h3>
+                                <h3>0799161600</h3>
                             </div>
                         </div>
                         <div class="why-choose_list">
@@ -557,7 +543,7 @@
                             </div>
                             <div class="why-choose_list-content">
                                 <span>Mail us</span>
-                                <h3><a href="https://demo.web3canvas.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89e0e7efe6c9e4ecedece7e0e7a7eae6e4">[email&#160;protected]</a></h3>
+                                <h3><a style="color: inherit;" href="mailto: ali.hus.obeidat@gmail.com" class="__cf_email__" data-cfemail="89e0e7efe6c9e4ecedece7e0e7a7eae6e4">ali.hus.obeidat@gmail.com</a></h3>
                             </div>
                         </div>
                     </div>
@@ -567,45 +553,7 @@
     </section>
 
 
-    <section class="space">
-        <div class="container container-custom">
-            <div class="row">
-                <div class="col-md-12 col-lg-6">
-                    <div class="news-img-block">
-                        <img src="images/play-img.png" class="img-fluid w-100" alt="#" />
-                        <a class="video-play-button popup-youtube" href="https://www.youtube.com/watch?v=pBFQdxA-apI">
-                            <span></span>
-                        </a>
-                        <div id="video-overlay" class="video-overlay">
-                            <a class="video-overlay-close">&times;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-6">
-                    <div class="video-play-text">
-                        <span>Who we are -----</span>
-                        <h2>We Have Advanced Technologies</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                        </p>
-                        <hr />
-                        <div class="newsletter-subscribe">
-                            <h4>Subscribe to our Newsletter</h4>
-                            <div class="newsletter-subscribe_form">
-                                <input type="text" class="form-control" placeholder="Enter Your Email" />
-                                <a href="#"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 
     <section class="our-team">
@@ -733,27 +681,7 @@
     </section>
 
 
-    <section class="bg-img3">
-        <div class="container container-custom">
-            <div class="row">
-                <div class="col-lg-5 offset-lg-7">
-                    <div class="consultant-content">
-                        <h2>We Believe in a Healthier You</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                        </p>
-                        <p>
-                            Adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut
-                            enim ad minim veniam,
-                        </p>
-                        <a href="#" class="btn btn-success">Get a Consultant</a>
-                        <a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="popup-youtube"> <i class="fas fa-play"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 
     <section class="testimonial pb-0">
@@ -842,128 +770,6 @@
     </section>
 
 
-    <section class="space">
-        <div class="container container-custom">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="sub-title_center">
-                        <span><i>---- Blog ----</i></span>
-                        <h2>Latest News & Events</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="blog-wrap">
-                        <div class="blog-row-block">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="blog-img">
-                                        <img src="images/blog-img1.jpg" class="img-fluid" alt="#" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6 d-flex align-items-center">
-                                    <div class="blog-content">
-                                        <span>January 12 2019 | By Admin</span>
-                                        <h3>
-                                            Finding meaning in the intersection <br /> between marriage and medicine...
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center">
-                                    <div class="blog-read-more">
-                                        <p><i class="far fa-eye"></i>233 <span>|</span> <i class="far fa-comment"></i>33
-                                        </p>
-                                        <a href="#" class="btn btn-primary">READ MORE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog-row-block">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="blog-img">
-                                        <img src="images/blog-img2.jpg" class="img-fluid" alt="#" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6 d-flex align-items-center">
-                                    <div class="blog-content">
-                                        <span>January 12 2019 | By Admin</span>
-                                        <h3>
-                                            Telemedicine overprescribes antib iotics:<br /> Are you really receiving...
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center">
-                                    <div class="blog-read-more">
-                                        <p><i class="far fa-eye"></i>233 <span>|</span> <i class="far fa-comment"></i>33
-                                        </p>
-                                        <a href="#" class="btn btn-primary">READ MORE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-row-block">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="blog-img">
-                                        <img src="images/blog-img3.jpg" class="img-fluid" alt="#" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6 d-flex align-items-center">
-                                    <div class="blog-content">
-                                        <span>January 12 2019 | By Admin</span>
-                                        <h3>
-                                            23-year-old woman with 2 weeks of painful <br /> lumps on her legs and..
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center">
-                                    <div class="blog-read-more">
-                                        <p><i class="far fa-eye"></i>233 <span>|</span> <i class="far fa-comment"></i>33
-                                        </p>
-                                        <a href="#" class="btn btn-primary">READ MORE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-row-block">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="blog-img">
-                                        <img src="images/blog-img4.jpg" class="img-fluid" alt="#" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6 d-flex align-items-center">
-                                    <div class="blog-content">
-                                        <span>January 12 2019 | By Admin</span>
-                                        <h3>
-                                            Keep insulting doctors, and good luck <br /> finding a physician in 10 days...
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center">
-                                    <div class="blog-read-more">
-                                        <p><i class="far fa-eye"></i>233 <span>|</span> <i class="far fa-comment"></i>33
-                                        </p>
-                                        <a href="#" class="btn btn-primary">READ MORE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center mt-5">
-                        <a href="#" class="btn btn-outline-primary">View All Blogs</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <footer>
@@ -977,10 +783,10 @@
                             tempor incididunt ut labore et dolore<br /> magna aliqua. Ut enim ad minim
                         </p>
                         <a href="tel:31234567890">
-                            <h4><i class="fas fa-phone"></i>3123 456 7890</h4>
+                            <h4><i class="fas fa-phone"></i>0799161600</h4>
                         </a>
-                        <a href="https://demo.web3canvas.com/cdn-cgi/l/email-protection#056c6b636a4568606160616c6b2b666a68">
-                            <h4><i class="far fa-envelope"></i><span class="__cf_email__" data-cfemail="137a7d757c537e767776777a7d3d707c7e">[email&#160;protected]</span></h4>
+                        <a href="mailto: ali.hus.obeidat@gmail.com">
+                            <h4><i class="far fa-envelope"></i><span class="__cf_email__" data-cfemail="137a7d757c537e767776777a7d3d707c7e">ali.hus.obeidat@gmail.com</span></h4>
                         </a>
                     </div>
                 </div>
@@ -1059,7 +865,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright">
-                        <p>© Medenin 2020 Allright Reserved</p>
+                        <p>© Tebco 2020 Allright Reserved</p>
                         <a href="#" id="scroll"><i class="fas fa-angle-double-up"></i></a>
                     </div>
                 </div>

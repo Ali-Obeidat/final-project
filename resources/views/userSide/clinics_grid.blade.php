@@ -14,7 +14,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
-
+    <link href="{{asset('css/main.d810cf0ae7f39f28f336.css')}}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <title>Doctors</title>
 </head>
@@ -182,10 +184,55 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Select insurance</h5>
                                         <select name="INSURANCE" class="multiselect-dropdown form-control">
-                                            <option value="0">Select Category</option>
-                                            <option value="asda">asda</option>
-                                            <option value="">$category->name</option>
-                                        </select>
+                                        <option value="0">Select Insurance</option>
+                                        <option value="ACI - Nat Health">ACI - Nat Health</option>
+                                        <option value="ACT - Nat Health">ACT - Nat Health</option>
+                                        <option value="AJIG - Nat Health">AJIG - Nat Health</option>
+                                        <option value="Al Aqsa Insurance Services Est">Al Aqsa Insurance Services Est</option>
+                                        <option value="Al Fakher Tobacco - Nat Health">Al Fakher Tobacco - Nat Health</option>
+                                        <option value="Al Hussein bin Tala University - Nat Health">Al Hussein bin Tala University - Nat Health</option>
+                                        <option value="Al Ittihad Schools insurance">Al Ittihad Schools insurance</option>
+                                        <option value="Al Khalidi Hospital Insurance">Al Khalidi Hospital Insurance</option>
+                                        <option value="Al Manara Insurance Co">Al Manara Insurance Co</option>
+                                        <option value="Al Nisr Al Arabi Insurance">Al Nisr Al Arabi Insurance</option>
+                                        <option value="Al Yaqeen Association - Nat Health">Al Yaqeen Association - Nat Health</option>
+                                        <option value="Al-Israa University">Al-Israa University</option>
+                                        <option value="Allianz - Nat Health">Allianz - Nat Health</option>
+                                        <option value="AlRai News - Nat Health">AlRai News - Nat Health</option>
+                                        <option value="Applied Sciences University">Applied Sciences University</option>
+                                        <option value="Aqaba Logistics Village - Nat Health">Aqaba Logistics Village - Nat Health</option>
+                                        <option value="Aqaba Water - Nat Health">Aqaba Water - Nat Health</option>
+                                        <option value="Arab Bank">Arab Bank</option>
+                                        <option value="Arab Company for White Cement">Arab Company for White Cement</option>
+                                        <option value="Arab Insurance Company">Arab Insurance Company</option>
+                                        <option value="Arab Insurance Group">Arab Insurance Group</option>
+                                        <option value="Arab Jordan Investment Bank">Arab Jordan Investment Bank</option>
+                                        <option value="Arab Orient Insurance">Arab Orient Insurance</option>
+                                        <option value="Axa - Nat Health">Axa - Nat Health</option>
+                                        <option value="Balqa Applied University">Balqa Applied University</option>
+                                        <option value="Bupa international">Bupa international</option>
+                                        <option value="Central Bank of Jordan">Central Bank of Jordan</option>
+                                        <option value="Delta Insurance Co">Delta Insurance Co</option>
+                                        <option value="Eico - Nat Health">Eico - Nat Health</option>
+                                        <option value="Emirates Jordan Insurance Scoop">Emirates Jordan Insurance Scoop</option>
+                                        <option value="Euro Arab Insurance Group">Euro Arab Insurance Group</option>
+                                        <option value="First Finance Co">First Finance Co</option>
+                                        <option value="First Finance Co">First Insurance co</option>
+                                        <option value="General Electricity Generation">General Electricity Generation</option>
+                                        <option value="Geo Blue Health Insurance">Geo Blue Health Insurance</option>
+                                        <option value="Geo Blue Health Insurance">Globe Med</option>
+                                        <option value="Housing Ban">Housing Bank</option>
+                                        <option value="Ibn Al Haytham Hospital Insurance">Ibn Al Haytham Hospital Insurance</option>
+                                        <option value="International Consultancy For Health Insurance">International Consultancy For Health Insurance</option>
+                                        <option value="Irbid Electricity">Irbid Electricity</option>
+                                        <option value="Iris Guard - Nat Health">Iris Guard - Nat Health</option>
+                                        <option value="Islamic Center Association - Nat Health">Islamic Center Association - Nat Health</option>
+                                        <option value="JERCO - Nat Health">JERCO - Nat Health</option>
+                                        <option value="JMRC - Nat Health">JMRC - Nat Health</option>
+                                        <option value="JERCO - Nat Health">JERCO - Nat Health</option>
+                                        <option value="NTD - Nat Health">NTD - Nat Health</option>
+                                        <option value="Yarmouk Insurance Co">Yarmouk Insurance Co</option>
+                                    </select>
                                     </div>
 
                                 </div>
@@ -540,6 +587,8 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
     <script src="{{asset('js/script.js')}}"></script>
+    <script type="text/javascript" src="{{asset('main.d810cf0ae7f39f28f336.js')}}"></script>
+
 </body>
 
 <!-- Mirrored from demo.web3canvas.com/themeforest/medenin/blog-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 12:34:23 GMT -->

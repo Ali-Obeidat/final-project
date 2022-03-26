@@ -26,7 +26,7 @@ class ClinicAppointmentController extends Controller
      */
     public function create()
     {
-        $monday = Carbon::now()->startOfWeek();
+        $monday = Carbon::now()->startOfWeek()->addWeek();
         $sunday = $monday->copy()->subDays();
         $saturday = $sunday->copy()->subDays();
         $tuesday = $monday->copy()->addDay();
@@ -85,7 +85,7 @@ class ClinicAppointmentController extends Controller
     {
         // $input['schedule_data']=  json_encode($request);
         // return  $request['$request'];
-        $monday = Carbon::now()->startOfWeek();
+        $monday = Carbon::now()->startOfWeek()->addWeek();
         $sunday = $monday->copy()->subDays();
         $saturday = $sunday->copy()->subDays();
         $tuesday = $monday->copy()->addDay();

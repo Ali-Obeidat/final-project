@@ -80,60 +80,8 @@
                                 </li>
                                 @endguest
 
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Patients <i class="fas fa-plus"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Services <i class="fas fa-plus"></i></a>
-                                                    <ul class="dropdown-menu dropdown-menu1">
-                                                        <li><a class="dropdown-item" href="services.html">Services
-                                                                One</a></li>
-                                                        <li><a class="dropdown-item" href="services-2.html">Services
-                                                                Two</a></li>
-                                                        <li><a class="dropdown-item" href="services-3.html">Services
-                                                                Three</a></li>
-                                                        <li><a class="dropdown-item" href="services-detail.html">Service
-                                                                Detail</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="dropdown-item" href="appointment.html">Appointment</a>
-                                                </li>
-                                                <li class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Our Doctors <i class="fas fa-plus"></i></a>
-                                                    <ul class="dropdown-menu dropdown-menu1">
-                                                        <li><a class="dropdown-item" href="doctors.html">Doctors One</a></li>
-                                                        <li><a class="dropdown-item" href="doctors-2.html">Doctors Two</a></li>
-                                                        <li><a class="dropdown-item" href="doctors-3.html">Doctors Three</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="dropdown-item" href="pricing.html">Pricing</a>
-                                                </li>
-                                            </ul>
-                                        </li>
 
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Blog <i class="fas fa-plus"></i> </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="blog-standard.html">Blog Stadared</a>
-                                                <a class="dropdown-item" href="blog-list.html">Blog List</a>
-                                                <a class="dropdown-item" href="blog-grid.html">Blog Grid</a>
-                                                <a class="dropdown-item" href="blog-grid-2.html">Blog Grid-2</a>
-                                                <a class="dropdown-item" href="blog-details.html">Blog Details</a>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> pages <i class="fas fa-plus"></i> </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="about.html">About</a>
-                                                <a class="dropdown-item" href="contact-us.html">Contact One</a>
-                                                <a class="dropdown-item" href="contact-us-2.html">Contact Two</a>
-                                                <a class="dropdown-item" href="error.html">Error 404</a>
-                                            </div>
-                                        </li>
+                                      
                                         <li>
                                             <ul class="cart-seperate">
                                                 <li class="nav-item">
@@ -168,7 +116,7 @@
                 <div class="h-100">
                     <div class="h-100 no-gutters row">
                         <div class="h-100 d-md-flex d-sm-block bg-white justify-content-center align-items-center col-md-12 col-lg-7">
-                            <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
+                            <div style="margin-bottom: 90px;" class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
                                 <div class="app-logo"></div>
                                 <h4>
                                     <div>Welcome,</div>

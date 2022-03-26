@@ -164,7 +164,7 @@
                                 @if(Auth::user()->roles[0]->name == 'Super Admin')
                                 <div class="widget-heading"> {{Auth::user()->name}} </div>
                         @else
-                        {{Auth::user()->clinics[0]->name}} Dashboard
+                        <!-- {{Auth::user()->clinics[0]->name}} Dashboard -->
                         <div class="widget-heading"> {{Auth::user()->name}} </div>
                                     <div class="widget-subheading">{{Auth::user()->clinics[0]->name}} </div>                        @endif
                                     
@@ -627,7 +627,7 @@
                                     @if(Auth::user()->roles[0]->name == 'Clinic Admin')
 
                                     <li>
-                                        <a href="{{route('clinics.edit',8)}}">
+                                        <a href="{{route('clinics.edit',Auth::user()->clinics[0]->id)}}">
                                             <i class="metismenu-icon"></i> Edit Your Clinic
                                         </a>
                                     </li>

@@ -112,13 +112,13 @@ class ClinicController extends Controller
      */
     public function edit($id)
     {
-
-        $ClinicAdmin = Admin::with('clinics')->where('id' , $id)->get();
+        $ClinicAdmin = Admin::with('clinics')->where('id' ,Auth::user()->id)->get();
         $clinic=  $ClinicAdmin[0]->clinics[0];
+        // return $clinic;
 
         $ClinicCategory =Category::find($ClinicAdmin[0]->clinics[0]->category_id) ;
         $ClinicSubCat =$clinic->SubCategories ;
-        // return $clinic->SubCategories;
+        // return $ClinicSubCat;
         $categories = Category::all();
         $subs = SubCategory::all();
         return view('admin.clinic.editClinic' ,compact('categories','clinic','subs','ClinicCategory','ClinicSubCat'));
@@ -247,7 +247,7 @@ public function clinicDetail($id)
    $days= $clinicAppointment[0]->schedule_data[0];
    $now = Carbon::now()->format('Y-m-d');
    $time= Carbon::now()->timezone('Asia/Riyadh')->format('H:i');
-    // return $now;
+    // return $clinic;
     return view('userSide.clinic_details',compact('categories','clinic','days','times','clinicAppointmentID','booking','now','time'));
 }
 }
