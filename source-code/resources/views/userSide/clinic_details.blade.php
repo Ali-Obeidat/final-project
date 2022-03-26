@@ -1,9 +1,8 @@
 <x-clinicPages-master>
 </x-clinicPages-master>
-
+    
 
 <body>
-
 
 
     <section>
@@ -13,7 +12,7 @@
                     <div class="top-bar">
                         <div class="row">
                             <div class="col-lg-3 col-md-12">
-                                <a class="navbar-brand" href="index.html"><img src="{{asset('images/logo.png')}}" alt="#"></a>
+                                <a class="navbar-brand" href="index.html"><img src="{{asset('images/275866911_502994061267138_1683770470022280059_n.png')}}" alt="#"></a>
                             </div>
                             <div class="col-md-9 d-flex align-items-end">
                                 <ul class="ml-auto">
@@ -92,8 +91,6 @@
                                 </li>
                                 @endguest
 
-
-
                             </ul>
                             <ul class="nav-icon-wrap">
                                 <li class="nav-item">
@@ -109,9 +106,6 @@
                                     <a class="nav-link" href="#"><i class="fab fa-google-plus-g"></i></a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fas fa-bars"></i></a>
-                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -227,229 +221,107 @@
     </section>
 
 
-
-    <section class="space">
-        <div class="" style="margin-left: 55px;
-    margin-right: 55px;">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="sub-title_center">
-                        <span><i>---- Clinics ----</i></span>
-                        <h3>Book a visit with Best Doctors in Jordan in a click.</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div id='sidePar' class="col-md-3">
-                    <div class="blog-sidebar">
-                        <!-- <div class="blog-sidebar_heading">
-                            <h4>Search</h4>
-                        </div> -->
-                        <!-- <div class="blog-sidebar_wrap">
-                            <div class="blog-sidebar_content blog-sidebar_search">
-                                <form action="#">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search here">
-                                        <i class="fas fa-search"></i>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="blog-sidebar">
-                        <!-- <div class="blog-sidebar_heading">
-                            <h4>Popular Posts</h4>
-                        </div>
-                        <div class="blog-sidebar_wrap">
-                            <div class="blog-sidebar_content">
-                                <a href="#" class="thumbnail-wrap">
-                                    <img src="images/thambnail-1.jpg" alt="#">
-                                    <div class="thumbnail-hover">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                                <div class="thumbnail-text_wrap">
-                                    <p>Lorem ipsum dolor sit amet,<br> consectetur..
-                                    </p>
-                                    <span>June 25, 2019</span>
-                                </div>
-                            </div>
-                            <div class="blog-sidebar_content">
-                                <a href="#" class="thumbnail-wrap">
-                                    <img src="images/thambnail-2.jpg" alt="#">
-                                    <div class="thumbnail-hover">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                                <div class="thumbnail-text_wrap">
-                                    <p>Lorem ipsum dolor sit amet,<br> consectetur..
-                                    </p>
-                                    <span>June 25, 2019</span>
-                                </div>
-                            </div>
-                            <div class="blog-sidebar_content">
-                                <a href="#" class="thumbnail-wrap">
-                                    <img src="images/thambnail-3.jpg" alt="#">
-                                    <div class="thumbnail-hover">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </div>
-                                </a>
-                                <div class="thumbnail-text_wrap">
-                                    <p>Lorem ipsum dolor sit amet,<br> consectetur..
-                                    </p>
-                                    <span>June 25, 2019</span>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="blog-sidebar">
-                        <!-- <div class="blog-sidebar_heading">
-                            <h4>Categories</h4>
-                        </div>
-                        <div class="blog-sidebar_wrap">
-                            <ul class="blog-sidebar_category">
-                                <li><a href="#">Dental Care</a> <span>15</span></li>
-                                <li><a href="#">Eye Care</a> <span>11</span></li>
-                                <li><a href="#">Allergic Issue</a> <span>6</span></li>
-                                <li><a href="#">Cardiology</a> <span>9</span></li>
-                                <li><a href="#">Neurology Sargery</a> <span>8</span></li>
-                                <li><a href="#">Allergic Issue</a> <span>1</span></li>
-                            </ul>
-                        </div> -->
-                    </div>
-                    <div class="blog-sidebar">
-                        <!-- <div class="blog-sidebar_heading">
-                            <h4>Tags</h4>
-                        </div>
-                        <div class="blog-sidebar_wrap">
-                            <ul class="blog-sidebar_tags">
-                                <li><a href="#">Medical</a></li>
-                                <li><a href="#">Health</a></li>
-                                <li><a href="#">Doctor</a></li>
-                                <li><a href="#">Health Lifestyle</a></li>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">Eye Care</a></li>
-                                <li><a href="#">Allergic</a></li>
-                                <li><a href="#">Diagnosis</a></li>
-                                <li><a href="#">Rehabitation</a></li>
-                            </ul>
-                        </div> -->
-                    </div>
-                    <div class="blog-sidebar">
-                        <div class="blog-sidebar_heading">
-                            <h4>Follow Us</h4>
-                        </div>
-                        <div class="blog-sidebar_wrap">
-                            <ul class="blog-sidebar_social">
-                                <li>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="blog-join_us">
-                        <div class="blog-join_us-content">
-                            <h6>Create Account</h6>
-                            <h3>JOIN US</h3>
-                            <p>Lorem ipsum dolor sit amet conse</p>
-                            <a href="{{route('register')}}" class="btn btn-dark">register</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-9">
-                    <div class="blog-wrap">
-                        @foreach($data as $value)
-                        <div class="blog-row-block">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="blog-img">
-                                        <img src="http://127.0.0.1:8000/storage/{{$value->img}}" class="img-fluid" alt="#" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6 d-flex align-items-center">
-                                    <div class="blog-content">
-                                        <span style="font-size: x-large;">{{$value->name}}</span>
-                                        <p>
-                                            <i class="fas fa-map-marker-alt"></i> {{$value->location}}. <br />
-                                            <img src="{{asset('images/doctor.png')}}" alt=""> {{$value->description}}
-                                        </p>
-                                        <span>Waiting time: 10 - 20</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex align-items-center">
-                                    <div class="blog-read-more">
-                                        <p>
-                                            <i class="far fa-star"></i>4
-
-                                        </p>
-                                        <a href="{{route('clinicDetail',$value->id)}}" class="btn btn-primary">Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center mt-5">
-                        {{ $data->appends(request()->except('page'))->links() }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="counter">
+    <section class="" style="padding-top: 40px;">
         <div class="container container-custom">
             <div class="row">
-                <div class="col-sm-4 col-md-3 col-lg-3">
-                    <div class="counter-block">
-                        <img src="{{asset('images/counter1.png')}}" alt="#">
-                        <div class="counter-text">
-                            <h2>60+</h2>
-                            <p>Expert Doctors</p>
+                <div class="col-md-8">
+                    <div class="blog-pre-next col-md-12">
+                        <img class="col-sm-12" src="{{$clinic->img}}" class="img-fluid" alt="#">
+                        <div class="blog-pre-next_content col-md-12">
+                            <h4>{{$clinic->name}}</h4>
+                            <p style=""> {{$clinic->description}} </p>
+                            <i class="fas fa-map-marker-alt"></i> {{$clinic->location}}
+                            <br>
+                            <span style="font-weight: bold;">Waiting time: 10 - 20</span>
+
                         </div>
                     </div>
+
+
+                    <hr>
+
+
                 </div>
-                <div class="col-sm-4 col-md-3 col-lg-3">
-                    <div class="counter-block">
-                        <img src="{{asset('images/counter2.png')}}" alt="#">
-                        <div class="counter-text">
-                            <h2>1000+</h2>
-                            <p>Happy Patients</p>
+                <div class="col-md-4">
+                    <div style="text-align: center;">
+                        <span>Choose Inclinic Appointment Time</span> <br>
+                        <span style="color: blue;">Book online using your mobile, without registering!</span>
+                    </div>
+                    <div style="height: 350px; overflow: overlay;">
+                        <div class="blog-sidebar">
+                            <table class="mb-0 table table-hover">
+                                <thead>
+                                    <tr>
+                                        @foreach($days as $day => $date)
+                                        <th>{{$day}}</th>
+                                        @endforeach
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach($days as $day => $date)
+                                    <td style="vertical-align: 0;">
+                                        @if($date[0] != null)
+                                        @foreach( $date[0] as $hour)
+                                        <li style="list-style-type: none;    padding: 5px;">
+                                            <form action="{{route('booking.show',$clinic->id)}}" method="post">
+                                                @csrf
+                                                @method('GET')
+                                                <input hidden type="text" name="time" value="{{$hour}}">
+                                                <input hidden type="text" name="day" value="{{$day}}">
+                                                <button @foreach($booking as $book) @if($book->day == $day && $book->time ==$hour)
+                                                    disabled
+                                                    @endif
+                                                    @endforeach
+                                                    @if($day < $now) disabled @endif @if($day==$now && $time> explode(' ',$hour)[0] ) disabled @endif
+                                                        style=" width: 84px;" class="btn-pill btn-transition btn btn-outline-info" type="submit">{{$hour}}</button>
+
+                                            </form>
+                                        </li>
+                                        @endforeach
+                                        @endif
+                                    </td>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-sm-4 col-md-3 col-lg-3">
-                    <div class="counter-block">
-                        <img src="{{asset('images/counter3.png')}}" alt="#">
-                        <div class="counter-text">
-                            <h2>150+</h2>
-                            <p>Award Winner</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-sm-12 col-md-3 col-lg-3 d-flex align-items-center justify-content-end">
-                    <div class="counter-btn_block">
-                        <a href="#" class="btn btn-success">BOOK NOW</a>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
+    <section class="">
+        <div class="container container-custom">
+            <div class="row">
+                <div class="col-md-8">
+                    <div>
+                        <h3>Professional Background</h3>
+                        <p>{{$clinic->professional_background}} </p>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3>Education</h3>
+                        <p> {{$clinic->education}}</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3>Insurance</h3>
+                        <ul>
+                            @foreach($clinic->insurance as $value)
+                            <li>{{$value}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 
 
     <x-footer-master>
@@ -461,12 +333,11 @@
     <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
-
-    <script src="{{asset('js/script.js')}}"></script>
     <script type="text/javascript" src="{{asset('main.d810cf0ae7f39f28f336.js')}}"></script>
 
+    <script src="{{asset('js/script.js')}}"></script>
 </body>
 
-<!-- Mirrored from demo.web3canvas.com/themeforest/medenin/blog-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 12:34:23 GMT -->
+<!-- Mirrored from demo.web3canvas.com/themeforest/medenin/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 12:34:25 GMT -->
 
 </html>

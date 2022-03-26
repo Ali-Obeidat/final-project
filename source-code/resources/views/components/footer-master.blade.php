@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-4">
                     <div class="foot-contact-block">
-                        <img src="{{asset('images/foot-logo.png')}}" class="img-fluid" alt="#" />
+                        <img src="{{asset('images/275866911_502994061267138_1683770470022280059_n.png')}}" class="img-fluid" alt="#" />
                         <p>
                             Lorem ipsum dolor sit amet, consect <br /> etur adipisicing elit, sed do eius mod <br />
                             tempor incididunt ut labore et dolore<br /> magna aliqua. Ut enim ad minim
@@ -64,16 +64,16 @@
                         <a href="#" class="btn btn-outline-success">Newsletter</a>
                         <ul>
                             <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://web.facebook.com/ali.obeidat.9210/"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/ali-hus-obeidat/"><i class="fab fa-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -82,7 +82,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright">
-                        <p>© Tebco 2020 Allright Reserved</p>
+                        <p>© JOclinics 2020 Alright Reserved</p>
                         <a href="#" id="scroll"><i class="fas fa-angle-double-up"></i></a>
                     </div>
                 </div>

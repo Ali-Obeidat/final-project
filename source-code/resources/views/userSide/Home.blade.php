@@ -6,7 +6,7 @@
 <head>
     <x-admin.styleHead-master>
     </x-admin.styleHead-master>
-    <title>Medenin-home</title>
+    <title>JOclinics</title>
     <style>
         @media (max-width: 450px) {
             #location {
@@ -35,7 +35,7 @@
                         <div class="col-md-12">
 
                             <nav class="navbar navbar-expand-lg navbar-light">
-                                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="#" /></a>
+                                <a class="navbar-brand" href="/"><img src="{{asset('images/275866911_502994061267138_1683770470022280059_n.png')}}" alt="#" /></a>
                                 <button class="navbar-toggler nav-custome1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle
                                         navigation">
                                     <span class="navbar-toggler-icon"></span>

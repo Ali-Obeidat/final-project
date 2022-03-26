@@ -45,7 +45,7 @@
                     <div class="top-bar">
                         <div class="row">
                             <div class="col-lg-3 col-md-12">
-                                <a class="navbar-brand" href="index.html"><img src="{{asset('images/logo.png')}}" alt="#"></a>
+                                <a class="navbar-brand" href="index.html"><img src="{{asset('images/275866911_502994061267138_1683770470022280059_n.png')}}" alt="#"></a>
                             </div>
                             <div class="col-md-9 d-flex align-items-end">
                                 <ul class="ml-auto">

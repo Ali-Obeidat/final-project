@@ -30,7 +30,7 @@
                     <div class="top-bar">
                         <div class="row">
                             <div class="col-lg-3 col-md-12">
-                                <a class="navbar-brand" href="index.html"><img src="{{asset('images/logo.png')}}" alt="#"></a>
+                                <a class="navbar-brand" href="/"><img src="{{asset('images/275866911_502994061267138_1683770470022280059_n.png')}}" alt="#"></a>
                             </div>
                             <div class="col-md-9 d-flex align-items-end">
                                 <ul class="ml-auto">
@@ -125,9 +125,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fab fa-google-plus-g"></i></a>
                                 </li>
-                                <li class="nav-item cart-seperate">
-                                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart fa-top-search"></i> <span>2</span></a>
-                                </li>
+                                
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fas fa-bars"></i></a>
                                 </li>
