@@ -1,32 +1,6 @@
-<!doctype html>
-<html lang="en">
-
-<!-- Mirrored from demo.web3canvas.com/themeforest/medenin/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 12:34:24 GMT -->
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <script src="{{asset('../../cdn-cgi/apps/head/OkbNSnEV_PNHTKP2_EYPrFNyZ8Q.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{asset('css/all.css')}}">
-    <link href="{{asset('css/main.d810cf0ae7f39f28f336.css')}}" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <title>Doctors</title>
-    <style>
-    @media screen and (max-width: 480px) {
-        #search {
-            display: none;
-        }
-    }
-</style>
-</head>
+<x-clinicPages-master>
+</x-clinicPages-master>
+    
 
 <body>
 
@@ -150,7 +124,7 @@
                 <div class="col-md-2">
                     <div class="sub-header_content">
 
-                        <span><i>Home /Clinic Detail</i></span>
+                        <span><i>Home / Blog List</i></span>
                     </div>
                 </div>
                 <div class="row" id="search">
@@ -158,7 +132,7 @@
                         <form action="{{route('search')}}" method="get">
                             <div class="booking-form row " style="background: none !important;">
 
-                                <div class="col-md-3 col-sm-8">
+                                <div class="col-md-6 col-lg-3  col-sm-8">
                                     <div class="card-body">
                                         <h5 class="card-title">Category</h5>
                                         <select name="category_id" class="multiselect-dropdown form-control">
@@ -169,68 +143,68 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-12" style="    display: flex;
+                                <div class="col-md-6 col-lg-3  col-sm-12" style="    display: flex;
                             align-items: center;
                             margin-top: 30px;">
                                     <input style="" name="location" type="text" class="form-control" placeholder="Search by Location" />
                                 </div>
-                                <div class="col-md-3 col-sm-8">
+                                <div class="col-md-6 col-lg-3  col-sm-8">
                                     <div class="card-body">
                                         <h5 class="card-title">Select insurance</h5>
                                         <select name="INSURANCE" class="multiselect-dropdown form-control">
-                                        <option value="0">Select Insurance</option>
-                                        <option value="ACI - Nat Health">ACI - Nat Health</option>
-                                        <option value="ACT - Nat Health">ACT - Nat Health</option>
-                                        <option value="AJIG - Nat Health">AJIG - Nat Health</option>
-                                        <option value="Al Aqsa Insurance Services Est">Al Aqsa Insurance Services Est</option>
-                                        <option value="Al Fakher Tobacco - Nat Health">Al Fakher Tobacco - Nat Health</option>
-                                        <option value="Al Hussein bin Tala University - Nat Health">Al Hussein bin Tala University - Nat Health</option>
-                                        <option value="Al Ittihad Schools insurance">Al Ittihad Schools insurance</option>
-                                        <option value="Al Khalidi Hospital Insurance">Al Khalidi Hospital Insurance</option>
-                                        <option value="Al Manara Insurance Co">Al Manara Insurance Co</option>
-                                        <option value="Al Nisr Al Arabi Insurance">Al Nisr Al Arabi Insurance</option>
-                                        <option value="Al Yaqeen Association - Nat Health">Al Yaqeen Association - Nat Health</option>
-                                        <option value="Al-Israa University">Al-Israa University</option>
-                                        <option value="Allianz - Nat Health">Allianz - Nat Health</option>
-                                        <option value="AlRai News - Nat Health">AlRai News - Nat Health</option>
-                                        <option value="Applied Sciences University">Applied Sciences University</option>
-                                        <option value="Aqaba Logistics Village - Nat Health">Aqaba Logistics Village - Nat Health</option>
-                                        <option value="Aqaba Water - Nat Health">Aqaba Water - Nat Health</option>
-                                        <option value="Arab Bank">Arab Bank</option>
-                                        <option value="Arab Company for White Cement">Arab Company for White Cement</option>
-                                        <option value="Arab Insurance Company">Arab Insurance Company</option>
-                                        <option value="Arab Insurance Group">Arab Insurance Group</option>
-                                        <option value="Arab Jordan Investment Bank">Arab Jordan Investment Bank</option>
-                                        <option value="Arab Orient Insurance">Arab Orient Insurance</option>
-                                        <option value="Axa - Nat Health">Axa - Nat Health</option>
-                                        <option value="Balqa Applied University">Balqa Applied University</option>
-                                        <option value="Bupa international">Bupa international</option>
-                                        <option value="Central Bank of Jordan">Central Bank of Jordan</option>
-                                        <option value="Delta Insurance Co">Delta Insurance Co</option>
-                                        <option value="Eico - Nat Health">Eico - Nat Health</option>
-                                        <option value="Emirates Jordan Insurance Scoop">Emirates Jordan Insurance Scoop</option>
-                                        <option value="Euro Arab Insurance Group">Euro Arab Insurance Group</option>
-                                        <option value="First Finance Co">First Finance Co</option>
-                                        <option value="First Finance Co">First Insurance co</option>
-                                        <option value="General Electricity Generation">General Electricity Generation</option>
-                                        <option value="Geo Blue Health Insurance">Geo Blue Health Insurance</option>
-                                        <option value="Geo Blue Health Insurance">Globe Med</option>
-                                        <option value="Housing Ban">Housing Bank</option>
-                                        <option value="Ibn Al Haytham Hospital Insurance">Ibn Al Haytham Hospital Insurance</option>
-                                        <option value="International Consultancy For Health Insurance">International Consultancy For Health Insurance</option>
-                                        <option value="Irbid Electricity">Irbid Electricity</option>
-                                        <option value="Iris Guard - Nat Health">Iris Guard - Nat Health</option>
-                                        <option value="Islamic Center Association - Nat Health">Islamic Center Association - Nat Health</option>
-                                        <option value="JERCO - Nat Health">JERCO - Nat Health</option>
-                                        <option value="JMRC - Nat Health">JMRC - Nat Health</option>
-                                        <option value="JERCO - Nat Health">JERCO - Nat Health</option>
-                                        <option value="NTD - Nat Health">NTD - Nat Health</option>
-                                        <option value="Yarmouk Insurance Co">Yarmouk Insurance Co</option>
-                                    </select>
+                                            <option value="0">Select Insurance</option>
+                                            <option value="ACI - Nat Health">ACI - Nat Health</option>
+                                            <option value="ACT - Nat Health">ACT - Nat Health</option>
+                                            <option value="AJIG - Nat Health">AJIG - Nat Health</option>
+                                            <option value="Al Aqsa Insurance Services Est">Al Aqsa Insurance Services Est</option>
+                                            <option value="Al Fakher Tobacco - Nat Health">Al Fakher Tobacco - Nat Health</option>
+                                            <option value="Al Hussein bin Tala University - Nat Health">Al Hussein bin Tala University - Nat Health</option>
+                                            <option value="Al Ittihad Schools insurance">Al Ittihad Schools insurance</option>
+                                            <option value="Al Khalidi Hospital Insurance">Al Khalidi Hospital Insurance</option>
+                                            <option value="Al Manara Insurance Co">Al Manara Insurance Co</option>
+                                            <option value="Al Nisr Al Arabi Insurance">Al Nisr Al Arabi Insurance</option>
+                                            <option value="Al Yaqeen Association - Nat Health">Al Yaqeen Association - Nat Health</option>
+                                            <option value="Al-Israa University">Al-Israa University</option>
+                                            <option value="Allianz - Nat Health">Allianz - Nat Health</option>
+                                            <option value="AlRai News - Nat Health">AlRai News - Nat Health</option>
+                                            <option value="Applied Sciences University">Applied Sciences University</option>
+                                            <option value="Aqaba Logistics Village - Nat Health">Aqaba Logistics Village - Nat Health</option>
+                                            <option value="Aqaba Water - Nat Health">Aqaba Water - Nat Health</option>
+                                            <option value="Arab Bank">Arab Bank</option>
+                                            <option value="Arab Company for White Cement">Arab Company for White Cement</option>
+                                            <option value="Arab Insurance Company">Arab Insurance Company</option>
+                                            <option value="Arab Insurance Group">Arab Insurance Group</option>
+                                            <option value="Arab Jordan Investment Bank">Arab Jordan Investment Bank</option>
+                                            <option value="Arab Orient Insurance">Arab Orient Insurance</option>
+                                            <option value="Axa - Nat Health">Axa - Nat Health</option>
+                                            <option value="Balqa Applied University">Balqa Applied University</option>
+                                            <option value="Bupa international">Bupa international</option>
+                                            <option value="Central Bank of Jordan">Central Bank of Jordan</option>
+                                            <option value="Delta Insurance Co">Delta Insurance Co</option>
+                                            <option value="Eico - Nat Health">Eico - Nat Health</option>
+                                            <option value="Emirates Jordan Insurance Scoop">Emirates Jordan Insurance Scoop</option>
+                                            <option value="Euro Arab Insurance Group">Euro Arab Insurance Group</option>
+                                            <option value="First Finance Co">First Finance Co</option>
+                                            <option value="First Finance Co">First Insurance co</option>
+                                            <option value="General Electricity Generation">General Electricity Generation</option>
+                                            <option value="Geo Blue Health Insurance">Geo Blue Health Insurance</option>
+                                            <option value="Geo Blue Health Insurance">Globe Med</option>
+                                            <option value="Housing Ban">Housing Bank</option>
+                                            <option value="Ibn Al Haytham Hospital Insurance">Ibn Al Haytham Hospital Insurance</option>
+                                            <option value="International Consultancy For Health Insurance">International Consultancy For Health Insurance</option>
+                                            <option value="Irbid Electricity">Irbid Electricity</option>
+                                            <option value="Iris Guard - Nat Health">Iris Guard - Nat Health</option>
+                                            <option value="Islamic Center Association - Nat Health">Islamic Center Association - Nat Health</option>
+                                            <option value="JERCO - Nat Health">JERCO - Nat Health</option>
+                                            <option value="JMRC - Nat Health">JMRC - Nat Health</option>
+                                            <option value="JERCO - Nat Health">JERCO - Nat Health</option>
+                                            <option value="NTD - Nat Health">NTD - Nat Health</option>
+                                            <option value="Yarmouk Insurance Co">Yarmouk Insurance Co</option>
+                                        </select>
                                     </div>
 
                                 </div>
-                                <div class="col-md-3 col-sm-12" style="    display: flex;
+                                <div class="col-md-6 col-lg-3  col-sm-12" style="    display: flex;
                                 align-items: center;
                                 margin-top: 30px;">
                                     <input name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
@@ -259,7 +233,7 @@
                             <i class="fas fa-map-marker-alt"></i> {{$clinic->location}}
                             <br>
                             <span style="font-weight: bold;">Waiting time: 10 - 20</span>
-                           
+
                         </div>
                     </div>
 
@@ -287,7 +261,7 @@
 
                                     @foreach($days as $day => $date)
                                     <td style="vertical-align: 0;">
-                                    @if($date[0] != null)
+                                        @if($date[0] != null)
                                         @foreach( $date[0] as $hour)
                                         <li style="list-style-type: none;    padding: 5px;">
                                             <form action="{{route('booking.show',$clinic->id)}}" method="post">
@@ -299,9 +273,8 @@
                                                     disabled
                                                     @endif
                                                     @endforeach
-                                                    @if($day < $now) disabled @endif
-                                                    @if($day == $now && $time > explode(' ',$hour)[0] ) disabled @endif
-                                                    style=" width: 84px;" class="btn-pill btn-transition btn btn-outline-info" type="submit">{{$hour}}</button>
+                                                    @if($day < $now) disabled @endif @if($day==$now && $time> explode(' ',$hour)[0] ) disabled @endif
+                                                        style=" width: 84px;" class="btn-pill btn-transition btn btn-outline-info" type="submit">{{$hour}}</button>
 
                                             </form>
                                         </li>
@@ -348,109 +321,11 @@
             </div>
         </div>
     </section>
-   
 
 
-    <footer>
-        <div class="container container-custom">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-4">
-                    <div class="foot-contact-block">
-                        <img src="{{asset('images/foot-logo.png')}}" class="img-fluid" alt="#" />
-                        <p>
-                            Lorem ipsum dolor sit amet, consect <br /> etur adipisicing elit, sed do eius mod <br />
-                            tempor incididunt ut labore et dolore<br /> magna aliqua. Ut enim ad minim
-                        </p>
-                        <a href="tel:31234567890">
-                            <h4><i class="fas fa-phone"></i>0799161600</h4>
-                        </a>
-                        <a href="mailto: ali.hus.obeidat@gmail.com">
-                            <h4><i class="far fa-envelope"></i><span class="__cf_email__" data-cfemail="137a7d757c537e767776777a7d3d707c7e">ali.hus.obeidat@gmail</span></h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 offset-lg-1">
-                    <div class="foot-link-box">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>About Us</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Our Mission</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Our Services</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Blogs & News</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Contact Us</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Faq</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2">
-                    <div class="foot-link-box">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Pediatrics</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Dermatology</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Cardiology</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Psychological</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Surgery</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Family Medicine</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-2 offset-lg-1">
-                    <div class="foot-link-box footlink-box_btn">
-                        <a href="#" class="btn btn-outline-success">Find a Doctor</a>
-                        <a href="#" class="btn btn-outline-success">Career</a>
-                        <a href="#" class="btn btn-outline-success">Newsletter</a>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="copyright">
-                        <p>© Tebco 2020 Allright Reserved</p>
-                        <a href="#" id="scroll"><i class="fas fa-angle-double-up"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+
+    <x-footer-master>
+</x-footer-master>
 
 
 

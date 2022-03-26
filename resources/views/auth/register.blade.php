@@ -23,7 +23,20 @@
     <link href="{{asset('css/main.d810cf0ae7f39f28f336.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css" />
-    <title>Medenin HTML Template</title>
+    <title>Medenin Sign up</title>
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/623f3e432abe5b455fc1c5c3/1fv3gmei0';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 </head>
 
 <body>
@@ -211,12 +224,10 @@
                                 <div class="slick-slider slick-initialized">
                                     <div>
                                         <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark" tabindex="-1">
-                                            <div class="slide-img-bg" style="background-image: url('assets/images/originals/citynights.jpg');"></div>
+                                            <div class="slide-img-bg" style="background-image: url('images/blog-img.jpg');"></div>
                                             <div class="slider-content">
-                                                <h3>Scalable, Modular, Consistent</h3>
-                                                <p>Easily exclude the components you don't require. Lightweight, consistent
-                                                    Bootstrap based styles across all elements and components
-                                                </p>
+                                                <h3>It only takes a few seconds to create your account</h3>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -237,106 +248,8 @@
 
 
 
-    <footer>
-        <div class="container container-custom">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-4">
-                    <div class="foot-contact-block">
-                        <img src="images/foot-logo.png" class="img-fluid" alt="#" />
-                        <p>
-                            Lorem ipsum dolor sit amet, consect <br /> etur adipisicing elit, sed do eius mod <br />
-                            tempor incididunt ut labore et dolore<br /> magna aliqua. Ut enim ad minim
-                        </p>
-                        <a href="tel:31234567890">
-                            <h4><i class="fas fa-phone"></i>3123 456 7890</h4>
-                        </a>
-                        <a href="https://demo.web3canvas.com/cdn-cgi/l/email-protection#056c6b636a4568606160616c6b2b666a68">
-                            <h4><i class="far fa-envelope"></i><span class="__cf_email__" data-cfemail="137a7d757c537e767776777a7d3d707c7e">[email&#160;protected]</span></h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 offset-lg-1">
-                    <div class="foot-link-box">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>About Us</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Our Mission</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Our Services</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Blogs & News</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Contact Us</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Faq</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2">
-                    <div class="foot-link-box">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Pediatrics</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Dermatology</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Cardiology</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Psychological</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Surgery</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Family Medicine</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-2 offset-lg-1">
-                    <div class="foot-link-box footlink-box_btn">
-                        <a href="#" class="btn btn-outline-success">Find a Doctor</a>
-                        <a href="#" class="btn btn-outline-success">Career</a>
-                        <a href="#" class="btn btn-outline-success">Newsletter</a>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="copyright">
-                        <p>© Medenin 2020 Allright Reserved</p>
-                        <a href="#" id="scroll"><i class="fas fa-angle-double-up"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <x-footer-master>
+</x-footer-master>
 
 
 

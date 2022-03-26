@@ -4,38 +4,24 @@
 <!-- Mirrored from demo.web3canvas.com/themeforest/medenin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 12:33:41 GMT -->
 
 <head>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1,
-            shrink-to-fit=no" />
-
-    <script src="../../cdn-cgi/apps/head/OkbNSnEV_PNHTKP2_EYPrFNyZ8Q.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="css/all.css" />
-
-    <link rel="stylesheet" href="css/slick.css" />
-    <link rel="stylesheet" href="css/slick-theme.css" />
-    <link href="{{asset('css/main.d810cf0ae7f39f28f336.css')}}" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
-    <title>Medenin</title>
+    <x-admin.styleHead-master>
+    </x-admin.styleHead-master>
+    <title>Medenin-home</title>
     <style>
-       @media (max-width: 450px) { 
-            #location{
+        @media (max-width: 450px) {
+            #location {
                 width: 234px;
             }
-            #doctor_name{
+
+            #doctor_name {
                 width: 180px;
             }
 
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
@@ -80,8 +66,10 @@
                                                 {{ Auth::user()->name }}
                                             </a>
 
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            
+                                        </li>
+                                        <li class="nav-item ">
+                                                <a class=" nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
@@ -89,7 +77,7 @@
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                     @csrf
                                                 </form>
-                                            </div>
+                                            
                                         </li>
                                         @endguest
 
@@ -105,7 +93,7 @@
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link btn btn-outline-primary appointment-btn-top" href="appointment.html">Appointment</a>
+                                            <a class="nav-link btn btn-outline-primary appointment-btn-top" href="#appointment">Appointment</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -131,8 +119,7 @@
                                         Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                                         ipsum dolor sit amet.
                                     </p>
-                                    <a href="#" class="btn btn-primary">Make Appointment</a>
-                                    <a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="play-btn popup-youtube"><i class="fas fa-play"></i></a>
+                                    <a href="#appointment" class="btn btn-primary">Make Appointment</a>
                                 </div>
 
                             </div>
@@ -175,8 +162,7 @@
                                         Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                                         ipsum dolor sit amet.
                                     </p>
-                                    <a href="#" class="btn btn-primary">Make Appointment</a>
-                                    <a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="play-btn popup-youtube"><i class="fas fa-play"></i></a>
+                                    <a href="#appointment" class="btn btn-primary">Make Appointment</a>
                                 </div>
 
                             </div>
@@ -219,8 +205,7 @@
                                         Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                                         ipsum dolor sit amet.
                                     </p>
-                                    <a href="#" class="btn btn-primary">Make Appointment</a>
-                                    <a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="play-btn popup-youtube"><i class="fas fa-play"></i></a>
+                                    <a href="#appointment" class="btn btn-primary">Make Appointment</a>
                                 </div>
 
                             </div>
@@ -257,12 +242,12 @@
     </header>
     @include('sweetalert::alert')
 
-    <section class="about-section" style="margin-top: 25px;">
+    <section id="appointment" class="about-section" style="margin-top: 25px;">
         <div class="">
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{route('search')}}" method="get">
-                    <h3 style="text-align: center; padding: 10px;">Find your clinic</h3>
+                        <h3 style="text-align: center; padding: 10px;">Find your clinic</h3>
 
                         <div class="booking-form row ">
 
@@ -281,7 +266,7 @@
                             align-items: center;
                             margin-top: 30px;
                             justify-content: center;">
-                                <input  id="location" name="location" type="text" class="form-control" placeholder="Search by Location" />
+                                <input id="location" name="location" type="text" class="form-control" placeholder="Search by Location" />
                             </div>
                             <div class="col-md-6 col-lg-3 col-sm-12">
                                 <div class="card-body">
@@ -343,7 +328,7 @@
                                 align-items: center;
                                 margin-top: 30px;
                                 justify-content: center;">
-                                <input  id="doctor_name" name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
+                                <input id="doctor_name" name="doctor_name" type="text" class="form-control" placeholder="Search by doctor name" />
                                 <button style="  margin-left: 5px;
     background-color: #5CC198;" type="submit" class="btn"><img src="{{asset('images/magnifier.png')}}" alt=""></button>
                             </div>
@@ -353,41 +338,41 @@
                 </div>
             </div>
             <div class="container ">
-            <div class="row space">
+                <div class="row space">
 
-                <div class="col-md-4">
-                    <div class="service-thumbnail d-flex flex-fill">
-                        <img src="images/service-thumbnail01.png" class="img-fluid" alt="#" />
-                        <div class="service-thumbnail_text">
-                            <h4>Specialised Service</h4>
-                            <p>Lorem ipsum dolor sit</p>
+                    <div class="col-md-4">
+                        <div class="service-thumbnail d-flex flex-fill">
+                            <img src="images/service-thumbnail01.png" class="img-fluid" alt="#" />
+                            <div class="service-thumbnail_text">
+                                <h4>Specialised Service</h4>
+                                <p>Lorem ipsum dolor sit</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="service-thumbnail d-flex flex-fill">
-                        <img src="images/service-thumbnail02.png" class="img-fluid" alt="#" />
-                        <div class="service-thumbnail_text">
-                            <h4>24/7 Advanced Care</h4>
-                            <p>Lorem ipsum dolor sit</p>
+                    <div class="col-md-4">
+                        <div class="service-thumbnail d-flex flex-fill">
+                            <img src="images/service-thumbnail02.png" class="img-fluid" alt="#" />
+                            <div class="service-thumbnail_text">
+                                <h4>24/7 Advanced Care</h4>
+                                <p>Lorem ipsum dolor sit</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="service-thumbnail border-0 d-flex flex-fill">
-                        <img src="images/service-thumbnail03.png" class="img-fluid" alt="#" />
-                        <div class="service-thumbnail_text">
-                            <h4>Get Result Online</h4>
-                            <p>Lorem ipsum dolor sit</p>
+                    <div class="col-md-4">
+                        <div class="service-thumbnail border-0 d-flex flex-fill">
+                            <img src="images/service-thumbnail03.png" class="img-fluid" alt="#" />
+                            <div class="service-thumbnail_text">
+                                <h4>Get Result Online</h4>
+                                <p>Lorem ipsum dolor sit</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-            </div>
-            
+
         </div>
     </section>
 
@@ -463,7 +448,7 @@
     </section>
 
 
-    <section class="space why-choose-block">
+    <section class="space why-choose-block" id="Contact">
         <div class="container container-custom">
             <div class="row">
                 <div class="col-md-12 col-lg-5">
@@ -515,7 +500,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="#" class="btn btn-dark" tabindex="0">MAKE APPOINTMENT</a>
+                            <a href="#appointment" class="btn btn-dark" tabindex="0">MAKE APPOINTMENT</a>
                         </div>
                     </div>
                 </div>
@@ -772,106 +757,8 @@
 
 
 
-    <footer>
-        <div class="container container-custom">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-4">
-                    <div class="foot-contact-block">
-                        <img src="images/foot-logo.png" class="img-fluid" alt="#" />
-                        <p>
-                            Lorem ipsum dolor sit amet, consect <br /> etur adipisicing elit, sed do eius mod <br />
-                            tempor incididunt ut labore et dolore<br /> magna aliqua. Ut enim ad minim
-                        </p>
-                        <a href="tel:31234567890">
-                            <h4><i class="fas fa-phone"></i>0799161600</h4>
-                        </a>
-                        <a href="mailto: ali.hus.obeidat@gmail.com">
-                            <h4><i class="far fa-envelope"></i><span class="__cf_email__" data-cfemail="137a7d757c537e767776777a7d3d707c7e">ali.hus.obeidat@gmail.com</span></h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 offset-lg-1">
-                    <div class="foot-link-box">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>About Us</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Our Mission</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Our Services</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Blogs & News</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Contact Us</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Faq</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2">
-                    <div class="foot-link-box">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Pediatrics</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Dermatology</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Cardiology</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Psychological</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Surgery</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-angle-double-right"></i>Family Medicine</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-2 offset-lg-1">
-                    <div class="foot-link-box footlink-box_btn">
-                        <a href="#" class="btn btn-outline-success">Find a Doctor</a>
-                        <a href="#" class="btn btn-outline-success">Career</a>
-                        <a href="#" class="btn btn-outline-success">Newsletter</a>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="copyright">
-                        <p>© Tebco 2020 Allright Reserved</p>
-                        <a href="#" id="scroll"><i class="fas fa-angle-double-up"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <x-footer-master>
+</x-footer-master>
 
 
 
